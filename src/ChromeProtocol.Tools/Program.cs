@@ -1,4 +1,4 @@
-﻿using ChromeProtocol.Tools.Commands;
+using ChromeProtocol.Tools.Commands;
 using ChromeProtocol.Tools.Logging;
 using Microsoft.Extensions.Logging;
 using Spectre.Console;
@@ -14,6 +14,6 @@ app.Configure(config =>
     .WithDescription(
       "Generates strongly-typed C# classes for domain types, events and commands from protocol definition files to be used with ChromeProtocol.")
     .WithExample("generate", "js_protocol.json", "mono_protocol.json", "-n", "DevTools.Api.Generated", "-o", "./out");
-  config.SetExceptionHandler(ex => AnsiConsole.WriteException(ex, ExceptionFormats.ShortenEverything));
+  config.SetExceptionHandler((ex, handler) => AnsiConsole.WriteException(ex, ExceptionFormats.ShortenEverything));
 });
 return app.Run(args);
