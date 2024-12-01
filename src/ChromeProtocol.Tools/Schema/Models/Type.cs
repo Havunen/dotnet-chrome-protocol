@@ -9,6 +9,7 @@ public record Type(
   string? Description,
   [property: JsonPropertyName("type")]
   TypeKind? Kind,
+  bool? Optional,
   Property[]? Properties,
   string[]? Enum,
   bool? Experimental,

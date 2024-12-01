@@ -10,14 +10,14 @@ namespace ChromeProtocol.Domains
   public static partial class Debugger
   {
     /// <summary>Breakpoint identifier.</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record BreakpointIdType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
     /// <summary>Call frame identifier.</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record CallFrameIdType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -159,7 +159,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Enum of possible script languages.</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record ScriptLanguageType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -346,7 +346,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Continues execution until specific location is reached.</summary>
     /// <param name="Location">Location to continue to.</param>
-    public static ChromeProtocol.Domains.Debugger.ContinueToLocationRequest ContinueToLocation(ChromeProtocol.Domains.Debugger.LocationType Location, string? TargetCallFrames = default)
+    public static ChromeProtocol.Domains.Debugger.ContinueToLocationRequest ContinueToLocation(ChromeProtocol.Domains.Debugger.LocationType Location, string? TargetCallFrames = default)    
     {
       return new ChromeProtocol.Domains.Debugger.ContinueToLocationRequest(Location, TargetCallFrames);
     }
@@ -365,7 +365,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Disables debugger for given page.</summary>
-    public static ChromeProtocol.Domains.Debugger.DisableRequest Disable()
+    public static ChromeProtocol.Domains.Debugger.DisableRequest Disable()    
     {
       return new ChromeProtocol.Domains.Debugger.DisableRequest();
     }
@@ -385,7 +385,7 @@ namespace ChromeProtocol.Domains
     /// The maximum size in bytes of collected scripts (not referenced by other heap objects)<br/>
     /// the debugger can hold. Puts no limit if parameter is omitted.<br/>
     /// </param>
-    public static ChromeProtocol.Domains.Debugger.EnableRequest Enable(double? MaxScriptsCacheSize = default)
+    public static ChromeProtocol.Domains.Debugger.EnableRequest Enable(double? MaxScriptsCacheSize = default)    
     {
       return new ChromeProtocol.Domains.Debugger.EnableRequest(MaxScriptsCacheSize);
     }
@@ -430,7 +430,7 @@ namespace ChromeProtocol.Domains
     /// <param name="GeneratePreview">Whether preview should be generated for the result.</param>
     /// <param name="ThrowOnSideEffect">Whether to throw an exception if side effect cannot be ruled out during evaluation.</param>
     /// <param name="Timeout">Terminate execution after timing out (number of milliseconds).</param>
-    public static ChromeProtocol.Domains.Debugger.EvaluateOnCallFrameRequest EvaluateOnCallFrame(ChromeProtocol.Domains.Debugger.CallFrameIdType CallFrameId, string Expression, string? ObjectGroup = default, bool? IncludeCommandLineAPI = default, bool? Silent = default, bool? ReturnByValue = default, bool? GeneratePreview = default, bool? ThrowOnSideEffect = default, ChromeProtocol.Domains.Runtime.TimeDeltaType? Timeout = default)
+    public static ChromeProtocol.Domains.Debugger.EvaluateOnCallFrameRequest EvaluateOnCallFrame(ChromeProtocol.Domains.Debugger.CallFrameIdType CallFrameId, string Expression, string? ObjectGroup = default, bool? IncludeCommandLineAPI = default, bool? Silent = default, bool? ReturnByValue = default, bool? GeneratePreview = default, bool? ThrowOnSideEffect = default, ChromeProtocol.Domains.Runtime.TimeDeltaType? Timeout = default)    
     {
       return new ChromeProtocol.Domains.Debugger.EvaluateOnCallFrameRequest(CallFrameId, Expression, ObjectGroup, IncludeCommandLineAPI, Silent, ReturnByValue, GeneratePreview, ThrowOnSideEffect, Timeout);
     }
@@ -496,7 +496,7 @@ namespace ChromeProtocol.Domains
     /// of scripts is used as end of range.<br/>
     /// </param>
     /// <param name="RestrictToFunction">Only consider locations which are in the same (non-nested) function as start.</param>
-    public static ChromeProtocol.Domains.Debugger.GetPossibleBreakpointsRequest GetPossibleBreakpoints(ChromeProtocol.Domains.Debugger.LocationType Start, ChromeProtocol.Domains.Debugger.LocationType? End = default, bool? RestrictToFunction = default)
+    public static ChromeProtocol.Domains.Debugger.GetPossibleBreakpointsRequest GetPossibleBreakpoints(ChromeProtocol.Domains.Debugger.LocationType Start, ChromeProtocol.Domains.Debugger.LocationType? End = default, bool? RestrictToFunction = default)    
     {
       return new ChromeProtocol.Domains.Debugger.GetPossibleBreakpointsRequest(Start, End, RestrictToFunction);
     }
@@ -530,7 +530,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Returns source for the script with given id.</summary>
     /// <param name="ScriptId">Id of the script to get source for.</param>
-    public static ChromeProtocol.Domains.Debugger.GetScriptSourceRequest GetScriptSource(ChromeProtocol.Domains.Runtime.ScriptIdType ScriptId)
+    public static ChromeProtocol.Domains.Debugger.GetScriptSourceRequest GetScriptSource(ChromeProtocol.Domains.Runtime.ScriptIdType ScriptId)    
     {
       return new ChromeProtocol.Domains.Debugger.GetScriptSourceRequest(ScriptId);
     }
@@ -554,7 +554,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <param name="ScriptId">Id of the script to disassemble</param>
-    public static ChromeProtocol.Domains.Debugger.DisassembleWasmModuleRequest DisassembleWasmModule(ChromeProtocol.Domains.Runtime.ScriptIdType ScriptId)
+    public static ChromeProtocol.Domains.Debugger.DisassembleWasmModuleRequest DisassembleWasmModule(ChromeProtocol.Domains.Runtime.ScriptIdType ScriptId)    
     {
       return new ChromeProtocol.Domains.Debugger.DisassembleWasmModuleRequest(ScriptId);
     }
@@ -594,7 +594,7 @@ namespace ChromeProtocol.Domains
     /// and return an empty chunk. Any subsequent calls for the now invalid stream<br/>
     /// will return errors.<br/>
     /// </summary>
-    public static ChromeProtocol.Domains.Debugger.NextWasmDisassemblyChunkRequest NextWasmDisassemblyChunk(string StreamId)
+    public static ChromeProtocol.Domains.Debugger.NextWasmDisassemblyChunkRequest NextWasmDisassemblyChunk(string StreamId)    
     {
       return new ChromeProtocol.Domains.Debugger.NextWasmDisassemblyChunkRequest(StreamId);
     }
@@ -621,7 +621,7 @@ namespace ChromeProtocol.Domains
     /// <summary>This command is deprecated. Use getScriptSource instead.</summary>
     /// <param name="ScriptId">Id of the Wasm script to get source for.</param>
     [System.Obsolete("This command marked as deprecated in the corresponding CDP definition schema. It may be removed in the future releases.", false)]
-    public static ChromeProtocol.Domains.Debugger.GetWasmBytecodeRequest GetWasmBytecode(ChromeProtocol.Domains.Runtime.ScriptIdType ScriptId)
+    public static ChromeProtocol.Domains.Debugger.GetWasmBytecodeRequest GetWasmBytecode(ChromeProtocol.Domains.Runtime.ScriptIdType ScriptId)    
     {
       return new ChromeProtocol.Domains.Debugger.GetWasmBytecodeRequest(ScriptId);
     }
@@ -644,7 +644,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Returns stack trace with given `stackTraceId`.</summary>
-    public static ChromeProtocol.Domains.Debugger.GetStackTraceRequest GetStackTrace(ChromeProtocol.Domains.Runtime.StackTraceIdType StackTraceId)
+    public static ChromeProtocol.Domains.Debugger.GetStackTraceRequest GetStackTrace(ChromeProtocol.Domains.Runtime.StackTraceIdType StackTraceId)    
     {
       return new ChromeProtocol.Domains.Debugger.GetStackTraceRequest(StackTraceId);
     }
@@ -663,7 +663,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Stops on the next JavaScript statement.</summary>
-    public static ChromeProtocol.Domains.Debugger.PauseRequest Pause()
+    public static ChromeProtocol.Domains.Debugger.PauseRequest Pause()    
     {
       return new ChromeProtocol.Domains.Debugger.PauseRequest();
     }
@@ -677,7 +677,7 @@ namespace ChromeProtocol.Domains
     }
     /// <param name="ParentStackTraceId">Debugger will pause when async call with given stack trace is started.</param>
     [System.Obsolete("This command marked as deprecated in the corresponding CDP definition schema. It may be removed in the future releases.", false)]
-    public static ChromeProtocol.Domains.Debugger.PauseOnAsyncCallRequest PauseOnAsyncCall(ChromeProtocol.Domains.Runtime.StackTraceIdType ParentStackTraceId)
+    public static ChromeProtocol.Domains.Debugger.PauseOnAsyncCallRequest PauseOnAsyncCall(ChromeProtocol.Domains.Runtime.StackTraceIdType ParentStackTraceId)    
     {
       return new ChromeProtocol.Domains.Debugger.PauseOnAsyncCallRequest(ParentStackTraceId);
     }
@@ -695,7 +695,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Removes JavaScript breakpoint.</summary>
-    public static ChromeProtocol.Domains.Debugger.RemoveBreakpointRequest RemoveBreakpoint(ChromeProtocol.Domains.Debugger.BreakpointIdType BreakpointId)
+    public static ChromeProtocol.Domains.Debugger.RemoveBreakpointRequest RemoveBreakpoint(ChromeProtocol.Domains.Debugger.BreakpointIdType BreakpointId)    
     {
       return new ChromeProtocol.Domains.Debugger.RemoveBreakpointRequest(BreakpointId);
     }
@@ -728,7 +728,7 @@ namespace ChromeProtocol.Domains
     /// The `mode` parameter must be present and set to &#39;StepInto&#39;, otherwise<br/>
     /// `restartFrame` will error out.<br/>
     /// </param>
-    public static ChromeProtocol.Domains.Debugger.RestartFrameRequest RestartFrame(ChromeProtocol.Domains.Debugger.CallFrameIdType CallFrameId, string? Mode = default)
+    public static ChromeProtocol.Domains.Debugger.RestartFrameRequest RestartFrame(ChromeProtocol.Domains.Debugger.CallFrameIdType CallFrameId, string? Mode = default)    
     {
       return new ChromeProtocol.Domains.Debugger.RestartFrameRequest(CallFrameId, Mode);
     }
@@ -783,7 +783,7 @@ namespace ChromeProtocol.Domains
     /// is actually resumed, at which point termination is triggered.<br/>
     /// If execution is currently not paused, this parameter has no effect.<br/>
     /// </param>
-    public static ChromeProtocol.Domains.Debugger.ResumeRequest Resume(bool? TerminateOnResume = default)
+    public static ChromeProtocol.Domains.Debugger.ResumeRequest Resume(bool? TerminateOnResume = default)    
     {
       return new ChromeProtocol.Domains.Debugger.ResumeRequest(TerminateOnResume);
     }
@@ -810,7 +810,7 @@ namespace ChromeProtocol.Domains
     /// <param name="Query">String to search for.</param>
     /// <param name="CaseSensitive">If true, search is case sensitive.</param>
     /// <param name="IsRegex">If true, treats string parameter as regex.</param>
-    public static ChromeProtocol.Domains.Debugger.SearchInContentRequest SearchInContent(ChromeProtocol.Domains.Runtime.ScriptIdType ScriptId, string Query, bool? CaseSensitive = default, bool? IsRegex = default)
+    public static ChromeProtocol.Domains.Debugger.SearchInContentRequest SearchInContent(ChromeProtocol.Domains.Runtime.ScriptIdType ScriptId, string Query, bool? CaseSensitive = default, bool? IsRegex = default)    
     {
       return new ChromeProtocol.Domains.Debugger.SearchInContentRequest(ScriptId, Query, CaseSensitive, IsRegex);
     }
@@ -844,7 +844,7 @@ namespace ChromeProtocol.Domains
     /// Maximum depth of async call stacks. Setting to `0` will effectively disable collecting async<br/>
     /// call stacks (default).<br/>
     /// </param>
-    public static ChromeProtocol.Domains.Debugger.SetAsyncCallStackDepthRequest SetAsyncCallStackDepth(int MaxDepth)
+    public static ChromeProtocol.Domains.Debugger.SetAsyncCallStackDepthRequest SetAsyncCallStackDepth(int MaxDepth)    
     {
       return new ChromeProtocol.Domains.Debugger.SetAsyncCallStackDepthRequest(MaxDepth);
     }
@@ -869,7 +869,7 @@ namespace ChromeProtocol.Domains
     /// performing &#39;step in&#39; several times, finally resorting to &#39;step out&#39; if unsuccessful.<br/>
     /// </summary>
     /// <param name="Patterns">Array of regexps that will be used to check script url for blackbox state.</param>
-    public static ChromeProtocol.Domains.Debugger.SetBlackboxPatternsRequest SetBlackboxPatterns(System.Collections.Generic.IReadOnlyList<string> Patterns)
+    public static ChromeProtocol.Domains.Debugger.SetBlackboxPatternsRequest SetBlackboxPatterns(System.Collections.Generic.IReadOnlyList<string> Patterns)    
     {
       return new ChromeProtocol.Domains.Debugger.SetBlackboxPatternsRequest(Patterns);
     }
@@ -896,7 +896,7 @@ namespace ChromeProtocol.Domains
     /// blackboxed. Array should be sorted.<br/>
     /// </summary>
     /// <param name="ScriptId">Id of the script.</param>
-    public static ChromeProtocol.Domains.Debugger.SetBlackboxedRangesRequest SetBlackboxedRanges(ChromeProtocol.Domains.Runtime.ScriptIdType ScriptId, System.Collections.Generic.IReadOnlyList<ChromeProtocol.Domains.Debugger.ScriptPositionType> Positions)
+    public static ChromeProtocol.Domains.Debugger.SetBlackboxedRangesRequest SetBlackboxedRanges(ChromeProtocol.Domains.Runtime.ScriptIdType ScriptId, System.Collections.Generic.IReadOnlyList<ChromeProtocol.Domains.Debugger.ScriptPositionType> Positions)    
     {
       return new ChromeProtocol.Domains.Debugger.SetBlackboxedRangesRequest(ScriptId, Positions);
     }
@@ -925,7 +925,7 @@ namespace ChromeProtocol.Domains
     /// Expression to use as a breakpoint condition. When specified, debugger will only stop on the<br/>
     /// breakpoint if this expression evaluates to true.<br/>
     /// </param>
-    public static ChromeProtocol.Domains.Debugger.SetBreakpointRequest SetBreakpoint(ChromeProtocol.Domains.Debugger.LocationType Location, string? Condition = default)
+    public static ChromeProtocol.Domains.Debugger.SetBreakpointRequest SetBreakpoint(ChromeProtocol.Domains.Debugger.LocationType Location, string? Condition = default)    
     {
       return new ChromeProtocol.Domains.Debugger.SetBreakpointRequest(Location, Condition);
     }
@@ -956,7 +956,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Sets instrumentation breakpoint.</summary>
     /// <param name="Instrumentation">Instrumentation name.</param>
-    public static ChromeProtocol.Domains.Debugger.SetInstrumentationBreakpointRequest SetInstrumentationBreakpoint(string Instrumentation)
+    public static ChromeProtocol.Domains.Debugger.SetInstrumentationBreakpointRequest SetInstrumentationBreakpoint(string Instrumentation)    
     {
       return new ChromeProtocol.Domains.Debugger.SetInstrumentationBreakpointRequest(Instrumentation);
     }
@@ -994,7 +994,7 @@ namespace ChromeProtocol.Domains
     /// Expression to use as a breakpoint condition. When specified, debugger will only stop on the<br/>
     /// breakpoint if this expression evaluates to true.<br/>
     /// </param>
-    public static ChromeProtocol.Domains.Debugger.SetBreakpointByUrlRequest SetBreakpointByUrl(int LineNumber, string? Url = default, string? UrlRegex = default, string? ScriptHash = default, int? ColumnNumber = default, string? Condition = default)
+    public static ChromeProtocol.Domains.Debugger.SetBreakpointByUrlRequest SetBreakpointByUrl(int LineNumber, string? Url = default, string? UrlRegex = default, string? ScriptHash = default, int? ColumnNumber = default, string? Condition = default)    
     {
       return new ChromeProtocol.Domains.Debugger.SetBreakpointByUrlRequest(LineNumber, Url, UrlRegex, ScriptHash, ColumnNumber, Condition);
     }
@@ -1053,7 +1053,7 @@ namespace ChromeProtocol.Domains
     /// Expression to use as a breakpoint condition. When specified, debugger will<br/>
     /// stop on the breakpoint if this expression evaluates to true.<br/>
     /// </param>
-    public static ChromeProtocol.Domains.Debugger.SetBreakpointOnFunctionCallRequest SetBreakpointOnFunctionCall(ChromeProtocol.Domains.Runtime.RemoteObjectIdType ObjectId, string? Condition = default)
+    public static ChromeProtocol.Domains.Debugger.SetBreakpointOnFunctionCallRequest SetBreakpointOnFunctionCall(ChromeProtocol.Domains.Runtime.RemoteObjectIdType ObjectId, string? Condition = default)    
     {
       return new ChromeProtocol.Domains.Debugger.SetBreakpointOnFunctionCallRequest(ObjectId, Condition);
     }
@@ -1085,7 +1085,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Activates / deactivates all breakpoints on the page.</summary>
     /// <param name="Active">New value for breakpoints active state.</param>
-    public static ChromeProtocol.Domains.Debugger.SetBreakpointsActiveRequest SetBreakpointsActive(bool Active)
+    public static ChromeProtocol.Domains.Debugger.SetBreakpointsActiveRequest SetBreakpointsActive(bool Active)    
     {
       return new ChromeProtocol.Domains.Debugger.SetBreakpointsActiveRequest(Active);
     }
@@ -1106,7 +1106,7 @@ namespace ChromeProtocol.Domains
     /// or caught exceptions, no exceptions. Initial pause on exceptions state is `none`.<br/>
     /// </summary>
     /// <param name="State">Pause on exceptions mode.</param>
-    public static ChromeProtocol.Domains.Debugger.SetPauseOnExceptionsRequest SetPauseOnExceptions(string State)
+    public static ChromeProtocol.Domains.Debugger.SetPauseOnExceptionsRequest SetPauseOnExceptions(string State)    
     {
       return new ChromeProtocol.Domains.Debugger.SetPauseOnExceptionsRequest(State);
     }
@@ -1127,7 +1127,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Changes return value in top frame. Available only at return break position.</summary>
     /// <param name="NewValue">New return value.</param>
-    public static ChromeProtocol.Domains.Debugger.SetReturnValueRequest SetReturnValue(ChromeProtocol.Domains.Runtime.CallArgumentType NewValue)
+    public static ChromeProtocol.Domains.Debugger.SetReturnValueRequest SetReturnValue(ChromeProtocol.Domains.Runtime.CallArgumentType NewValue)    
     {
       return new ChromeProtocol.Domains.Debugger.SetReturnValueRequest(NewValue);
     }
@@ -1161,7 +1161,7 @@ namespace ChromeProtocol.Domains
     /// If true, then `scriptSource` is allowed to change the function on top of the stack<br/>
     /// as long as the top-most stack frame is the only activation of that function.<br/>
     /// </param>
-    public static ChromeProtocol.Domains.Debugger.SetScriptSourceRequest SetScriptSource(ChromeProtocol.Domains.Runtime.ScriptIdType ScriptId, string ScriptSource, bool? DryRun = default, bool? AllowTopFrameEditing = default)
+    public static ChromeProtocol.Domains.Debugger.SetScriptSourceRequest SetScriptSource(ChromeProtocol.Domains.Runtime.ScriptIdType ScriptId, string ScriptSource, bool? DryRun = default, bool? AllowTopFrameEditing = default)    
     {
       return new ChromeProtocol.Domains.Debugger.SetScriptSourceRequest(ScriptId, ScriptSource, DryRun, AllowTopFrameEditing);
     }
@@ -1228,7 +1228,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Makes page not interrupt on any pauses (breakpoint, exception, dom exception etc).</summary>
     /// <param name="Skip">New value for skip pauses state.</param>
-    public static ChromeProtocol.Domains.Debugger.SetSkipAllPausesRequest SetSkipAllPauses(bool Skip)
+    public static ChromeProtocol.Domains.Debugger.SetSkipAllPausesRequest SetSkipAllPauses(bool Skip)    
     {
       return new ChromeProtocol.Domains.Debugger.SetSkipAllPausesRequest(Skip);
     }
@@ -1255,7 +1255,7 @@ namespace ChromeProtocol.Domains
     /// <param name="VariableName">Variable name.</param>
     /// <param name="NewValue">New variable value.</param>
     /// <param name="CallFrameId">Id of callframe that holds variable.</param>
-    public static ChromeProtocol.Domains.Debugger.SetVariableValueRequest SetVariableValue(int ScopeNumber, string VariableName, ChromeProtocol.Domains.Runtime.CallArgumentType NewValue, ChromeProtocol.Domains.Debugger.CallFrameIdType CallFrameId)
+    public static ChromeProtocol.Domains.Debugger.SetVariableValueRequest SetVariableValue(int ScopeNumber, string VariableName, ChromeProtocol.Domains.Runtime.CallArgumentType NewValue, ChromeProtocol.Domains.Debugger.CallFrameIdType CallFrameId)    
     {
       return new ChromeProtocol.Domains.Debugger.SetVariableValueRequest(ScopeNumber, VariableName, NewValue, CallFrameId);
     }
@@ -1292,7 +1292,7 @@ namespace ChromeProtocol.Domains
     /// before next pause.<br/>
     /// </param>
     /// <param name="SkipList">The skipList specifies location ranges that should be skipped on step into.</param>
-    public static ChromeProtocol.Domains.Debugger.StepIntoRequest StepInto(bool? BreakOnAsyncCall = default, System.Collections.Generic.IReadOnlyList<ChromeProtocol.Domains.Debugger.LocationRangeType>? SkipList = default)
+    public static ChromeProtocol.Domains.Debugger.StepIntoRequest StepInto(bool? BreakOnAsyncCall = default, System.Collections.Generic.IReadOnlyList<ChromeProtocol.Domains.Debugger.LocationRangeType>? SkipList = default)    
     {
       return new ChromeProtocol.Domains.Debugger.StepIntoRequest(BreakOnAsyncCall, SkipList);
     }
@@ -1315,7 +1315,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Steps out of the function call.</summary>
-    public static ChromeProtocol.Domains.Debugger.StepOutRequest StepOut()
+    public static ChromeProtocol.Domains.Debugger.StepOutRequest StepOut()    
     {
       return new ChromeProtocol.Domains.Debugger.StepOutRequest();
     }
@@ -1329,7 +1329,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Steps over the statement.</summary>
     /// <param name="SkipList">The skipList specifies location ranges that should be skipped on step over.</param>
-    public static ChromeProtocol.Domains.Debugger.StepOverRequest StepOver(System.Collections.Generic.IReadOnlyList<ChromeProtocol.Domains.Debugger.LocationRangeType>? SkipList = default)
+    public static ChromeProtocol.Domains.Debugger.StepOverRequest StepOver(System.Collections.Generic.IReadOnlyList<ChromeProtocol.Domains.Debugger.LocationRangeType>? SkipList = default)    
     {
       return new ChromeProtocol.Domains.Debugger.StepOverRequest(SkipList);
     }

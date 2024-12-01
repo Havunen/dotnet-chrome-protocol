@@ -7,13 +7,13 @@ namespace ChromeProtocol.Domains
   public static partial class Media
   {
     /// <summary>Players will get an ID that is unique within the agent context.</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record PlayerIdType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record TimestampType(
       double Value
     ) : ChromeProtocol.Core.PrimitiveType<double>(Value)
@@ -156,7 +156,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Enables the Media domain</summary>
-    public static ChromeProtocol.Domains.Media.EnableRequest Enable()
+    public static ChromeProtocol.Domains.Media.EnableRequest Enable()    
     {
       return new ChromeProtocol.Domains.Media.EnableRequest();
     }
@@ -169,7 +169,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Disables the Media domain.</summary>
-    public static ChromeProtocol.Domains.Media.DisableRequest Disable()
+    public static ChromeProtocol.Domains.Media.DisableRequest Disable()    
     {
       return new ChromeProtocol.Domains.Media.DisableRequest();
     }

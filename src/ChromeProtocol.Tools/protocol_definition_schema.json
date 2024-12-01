@@ -60,7 +60,8 @@
                   "integer",
                   "number",
                   "object",
-                  "string"
+                  "string",
+                  "binary"
                 ]
               },
               "properties": {
@@ -178,7 +179,8 @@
               "integer",
               "number",
               "object",
-              "string"
+              "string",
+              "binary"
             ]
           },
           "enum": {
@@ -195,7 +197,8 @@
                   "integer",
                   "number",
                   "object",
-                  "string"
+                  "string",
+                  "binary"
                 ]
               },
               "ref": {

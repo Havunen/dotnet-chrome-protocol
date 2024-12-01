@@ -5,14 +5,14 @@ namespace ChromeProtocol.Domains
 {
   public static partial class Storage
   {
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record SerializedStorageKeyType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
     /// <summary>Enum of possible storage types.</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record StorageTypeType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -42,28 +42,28 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Protected audience interest group auction identifier.</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record InterestGroupAuctionIdType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
     /// <summary>Enum of interest group access types.</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record InterestGroupAccessTypeType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
     /// <summary>Enum of auction events.</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record InterestGroupAuctionEventTypeType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
     /// <summary>Enum of network fetches auctions can do.</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record InterestGroupAuctionFetchTypeType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -108,7 +108,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Enum of shared storage access types.</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record SharedStorageAccessTypeType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -225,7 +225,7 @@ namespace ChromeProtocol.Domains
     ) : ChromeProtocol.Core.IType
     {
     }
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record StorageBucketsDurabilityType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -257,25 +257,25 @@ namespace ChromeProtocol.Domains
     ) : ChromeProtocol.Core.IType
     {
     }
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record AttributionReportingSourceTypeType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record UnsignedInt64AsBase10Type(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record UnsignedInt128AsBase16Type(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record SignedInt64AsBase10Type(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -336,7 +336,7 @@ namespace ChromeProtocol.Domains
     ) : ChromeProtocol.Core.IType
     {
     }
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record AttributionReportingTriggerDataMatchingType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -376,13 +376,13 @@ namespace ChromeProtocol.Domains
     ) : ChromeProtocol.Core.IType
     {
     }
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record AttributionReportingSourceRegistrationResultType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record AttributionReportingSourceRegistrationTimeConfigType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -462,13 +462,13 @@ namespace ChromeProtocol.Domains
     ) : ChromeProtocol.Core.IType
     {
     }
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record AttributionReportingEventLevelResultType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record AttributionReportingAggregatableResultType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -679,7 +679,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Returns a storage key given a frame id.</summary>
-    public static ChromeProtocol.Domains.Storage.GetStorageKeyForFrameRequest GetStorageKeyForFrame(ChromeProtocol.Domains.Page.FrameIdType FrameId)
+    public static ChromeProtocol.Domains.Storage.GetStorageKeyForFrameRequest GetStorageKeyForFrame(ChromeProtocol.Domains.Page.FrameIdType FrameId)    
     {
       return new ChromeProtocol.Domains.Storage.GetStorageKeyForFrameRequest(FrameId);
     }
@@ -700,7 +700,7 @@ namespace ChromeProtocol.Domains
     /// <summary>Clears storage for origin.</summary>
     /// <param name="Origin">Security origin.</param>
     /// <param name="StorageTypes">Comma separated list of StorageType to clear.</param>
-    public static ChromeProtocol.Domains.Storage.ClearDataForOriginRequest ClearDataForOrigin(string Origin, string StorageTypes)
+    public static ChromeProtocol.Domains.Storage.ClearDataForOriginRequest ClearDataForOrigin(string Origin, string StorageTypes)    
     {
       return new ChromeProtocol.Domains.Storage.ClearDataForOriginRequest(Origin, StorageTypes);
     }
@@ -722,7 +722,7 @@ namespace ChromeProtocol.Domains
     /// <summary>Clears storage for storage key.</summary>
     /// <param name="StorageKey">Storage key.</param>
     /// <param name="StorageTypes">Comma separated list of StorageType to clear.</param>
-    public static ChromeProtocol.Domains.Storage.ClearDataForStorageKeyRequest ClearDataForStorageKey(string StorageKey, string StorageTypes)
+    public static ChromeProtocol.Domains.Storage.ClearDataForStorageKeyRequest ClearDataForStorageKey(string StorageKey, string StorageTypes)    
     {
       return new ChromeProtocol.Domains.Storage.ClearDataForStorageKeyRequest(StorageKey, StorageTypes);
     }
@@ -743,7 +743,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Returns all browser cookies.</summary>
     /// <param name="BrowserContextId">Browser context to use when called on the browser endpoint.</param>
-    public static ChromeProtocol.Domains.Storage.GetCookiesRequest GetCookies(ChromeProtocol.Domains.Browser.BrowserContextIDType? BrowserContextId = default)
+    public static ChromeProtocol.Domains.Storage.GetCookiesRequest GetCookies(ChromeProtocol.Domains.Browser.BrowserContextIDType? BrowserContextId = default)    
     {
       return new ChromeProtocol.Domains.Storage.GetCookiesRequest(BrowserContextId);
     }
@@ -766,7 +766,7 @@ namespace ChromeProtocol.Domains
     /// <summary>Sets given cookies.</summary>
     /// <param name="Cookies">Cookies to be set.</param>
     /// <param name="BrowserContextId">Browser context to use when called on the browser endpoint.</param>
-    public static ChromeProtocol.Domains.Storage.SetCookiesRequest SetCookies(System.Collections.Generic.IReadOnlyList<ChromeProtocol.Domains.Network.CookieParamType> Cookies, ChromeProtocol.Domains.Browser.BrowserContextIDType? BrowserContextId = default)
+    public static ChromeProtocol.Domains.Storage.SetCookiesRequest SetCookies(System.Collections.Generic.IReadOnlyList<ChromeProtocol.Domains.Network.CookieParamType> Cookies, ChromeProtocol.Domains.Browser.BrowserContextIDType? BrowserContextId = default)    
     {
       return new ChromeProtocol.Domains.Storage.SetCookiesRequest(Cookies, BrowserContextId);
     }
@@ -787,7 +787,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Clears cookies.</summary>
     /// <param name="BrowserContextId">Browser context to use when called on the browser endpoint.</param>
-    public static ChromeProtocol.Domains.Storage.ClearCookiesRequest ClearCookies(ChromeProtocol.Domains.Browser.BrowserContextIDType? BrowserContextId = default)
+    public static ChromeProtocol.Domains.Storage.ClearCookiesRequest ClearCookies(ChromeProtocol.Domains.Browser.BrowserContextIDType? BrowserContextId = default)    
     {
       return new ChromeProtocol.Domains.Storage.ClearCookiesRequest(BrowserContextId);
     }
@@ -805,7 +805,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Returns usage and quota in bytes.</summary>
     /// <param name="Origin">Security origin.</param>
-    public static ChromeProtocol.Domains.Storage.GetUsageAndQuotaRequest GetUsageAndQuota(string Origin)
+    public static ChromeProtocol.Domains.Storage.GetUsageAndQuotaRequest GetUsageAndQuota(string Origin)    
     {
       return new ChromeProtocol.Domains.Storage.GetUsageAndQuotaRequest(Origin);
     }
@@ -845,7 +845,7 @@ namespace ChromeProtocol.Domains
     /// origins, the override will be maintained for each origin until it is<br/>
     /// disabled (called without a quotaSize).<br/>
     /// </param>
-    public static ChromeProtocol.Domains.Storage.OverrideQuotaForOriginRequest OverrideQuotaForOrigin(string Origin, double? QuotaSize = default)
+    public static ChromeProtocol.Domains.Storage.OverrideQuotaForOriginRequest OverrideQuotaForOrigin(string Origin, double? QuotaSize = default)    
     {
       return new ChromeProtocol.Domains.Storage.OverrideQuotaForOriginRequest(Origin, QuotaSize);
     }
@@ -874,7 +874,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Registers origin to be notified when an update occurs to its cache storage list.</summary>
     /// <param name="Origin">Security origin.</param>
-    public static ChromeProtocol.Domains.Storage.TrackCacheStorageForOriginRequest TrackCacheStorageForOrigin(string Origin)
+    public static ChromeProtocol.Domains.Storage.TrackCacheStorageForOriginRequest TrackCacheStorageForOrigin(string Origin)    
     {
       return new ChromeProtocol.Domains.Storage.TrackCacheStorageForOriginRequest(Origin);
     }
@@ -892,7 +892,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Registers storage key to be notified when an update occurs to its cache storage list.</summary>
     /// <param name="StorageKey">Storage key.</param>
-    public static ChromeProtocol.Domains.Storage.TrackCacheStorageForStorageKeyRequest TrackCacheStorageForStorageKey(string StorageKey)
+    public static ChromeProtocol.Domains.Storage.TrackCacheStorageForStorageKeyRequest TrackCacheStorageForStorageKey(string StorageKey)    
     {
       return new ChromeProtocol.Domains.Storage.TrackCacheStorageForStorageKeyRequest(StorageKey);
     }
@@ -910,7 +910,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Registers origin to be notified when an update occurs to its IndexedDB.</summary>
     /// <param name="Origin">Security origin.</param>
-    public static ChromeProtocol.Domains.Storage.TrackIndexedDBForOriginRequest TrackIndexedDBForOrigin(string Origin)
+    public static ChromeProtocol.Domains.Storage.TrackIndexedDBForOriginRequest TrackIndexedDBForOrigin(string Origin)    
     {
       return new ChromeProtocol.Domains.Storage.TrackIndexedDBForOriginRequest(Origin);
     }
@@ -928,7 +928,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Registers storage key to be notified when an update occurs to its IndexedDB.</summary>
     /// <param name="StorageKey">Storage key.</param>
-    public static ChromeProtocol.Domains.Storage.TrackIndexedDBForStorageKeyRequest TrackIndexedDBForStorageKey(string StorageKey)
+    public static ChromeProtocol.Domains.Storage.TrackIndexedDBForStorageKeyRequest TrackIndexedDBForStorageKey(string StorageKey)    
     {
       return new ChromeProtocol.Domains.Storage.TrackIndexedDBForStorageKeyRequest(StorageKey);
     }
@@ -946,7 +946,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Unregisters origin from receiving notifications for cache storage.</summary>
     /// <param name="Origin">Security origin.</param>
-    public static ChromeProtocol.Domains.Storage.UntrackCacheStorageForOriginRequest UntrackCacheStorageForOrigin(string Origin)
+    public static ChromeProtocol.Domains.Storage.UntrackCacheStorageForOriginRequest UntrackCacheStorageForOrigin(string Origin)    
     {
       return new ChromeProtocol.Domains.Storage.UntrackCacheStorageForOriginRequest(Origin);
     }
@@ -964,7 +964,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Unregisters storage key from receiving notifications for cache storage.</summary>
     /// <param name="StorageKey">Storage key.</param>
-    public static ChromeProtocol.Domains.Storage.UntrackCacheStorageForStorageKeyRequest UntrackCacheStorageForStorageKey(string StorageKey)
+    public static ChromeProtocol.Domains.Storage.UntrackCacheStorageForStorageKeyRequest UntrackCacheStorageForStorageKey(string StorageKey)    
     {
       return new ChromeProtocol.Domains.Storage.UntrackCacheStorageForStorageKeyRequest(StorageKey);
     }
@@ -982,7 +982,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Unregisters origin from receiving notifications for IndexedDB.</summary>
     /// <param name="Origin">Security origin.</param>
-    public static ChromeProtocol.Domains.Storage.UntrackIndexedDBForOriginRequest UntrackIndexedDBForOrigin(string Origin)
+    public static ChromeProtocol.Domains.Storage.UntrackIndexedDBForOriginRequest UntrackIndexedDBForOrigin(string Origin)    
     {
       return new ChromeProtocol.Domains.Storage.UntrackIndexedDBForOriginRequest(Origin);
     }
@@ -1000,7 +1000,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Unregisters storage key from receiving notifications for IndexedDB.</summary>
     /// <param name="StorageKey">Storage key.</param>
-    public static ChromeProtocol.Domains.Storage.UntrackIndexedDBForStorageKeyRequest UntrackIndexedDBForStorageKey(string StorageKey)
+    public static ChromeProtocol.Domains.Storage.UntrackIndexedDBForStorageKeyRequest UntrackIndexedDBForStorageKey(string StorageKey)    
     {
       return new ChromeProtocol.Domains.Storage.UntrackIndexedDBForStorageKeyRequest(StorageKey);
     }
@@ -1020,7 +1020,7 @@ namespace ChromeProtocol.Domains
     /// Returns the number of stored Trust Tokens per issuer for the<br/>
     /// current browsing context.<br/>
     /// </summary>
-    public static ChromeProtocol.Domains.Storage.GetTrustTokensRequest GetTrustTokens()
+    public static ChromeProtocol.Domains.Storage.GetTrustTokensRequest GetTrustTokens()    
     {
       return new ChromeProtocol.Domains.Storage.GetTrustTokensRequest();
     }
@@ -1042,7 +1042,7 @@ namespace ChromeProtocol.Domains
     /// Removes all Trust Tokens issued by the provided issuerOrigin.<br/>
     /// Leaves other stored data, including the issuer&#39;s Redemption Records, intact.<br/>
     /// </summary>
-    public static ChromeProtocol.Domains.Storage.ClearTrustTokensRequest ClearTrustTokens(string IssuerOrigin)
+    public static ChromeProtocol.Domains.Storage.ClearTrustTokensRequest ClearTrustTokens(string IssuerOrigin)    
     {
       return new ChromeProtocol.Domains.Storage.ClearTrustTokensRequest(IssuerOrigin);
     }
@@ -1065,7 +1065,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Gets details for a named interest group.</summary>
-    public static ChromeProtocol.Domains.Storage.GetInterestGroupDetailsRequest GetInterestGroupDetails(string OwnerOrigin, string Name)
+    public static ChromeProtocol.Domains.Storage.GetInterestGroupDetailsRequest GetInterestGroupDetails(string OwnerOrigin, string Name)    
     {
       return new ChromeProtocol.Domains.Storage.GetInterestGroupDetailsRequest(OwnerOrigin, Name);
     }
@@ -1086,7 +1086,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Enables/Disables issuing of interestGroupAccessed events.</summary>
-    public static ChromeProtocol.Domains.Storage.SetInterestGroupTrackingRequest SetInterestGroupTracking(bool Enable)
+    public static ChromeProtocol.Domains.Storage.SetInterestGroupTrackingRequest SetInterestGroupTracking(bool Enable)    
     {
       return new ChromeProtocol.Domains.Storage.SetInterestGroupTrackingRequest(Enable);
     }
@@ -1105,7 +1105,7 @@ namespace ChromeProtocol.Domains
     /// Enables/Disables issuing of interestGroupAuctionEventOccurred and<br/>
     /// interestGroupAuctionNetworkRequestCreated.<br/>
     /// </summary>
-    public static ChromeProtocol.Domains.Storage.SetInterestGroupAuctionTrackingRequest SetInterestGroupAuctionTracking(bool Enable)
+    public static ChromeProtocol.Domains.Storage.SetInterestGroupAuctionTrackingRequest SetInterestGroupAuctionTracking(bool Enable)    
     {
       return new ChromeProtocol.Domains.Storage.SetInterestGroupAuctionTrackingRequest(Enable);
     }
@@ -1124,7 +1124,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Gets metadata for an origin&#39;s shared storage.</summary>
-    public static ChromeProtocol.Domains.Storage.GetSharedStorageMetadataRequest GetSharedStorageMetadata(string OwnerOrigin)
+    public static ChromeProtocol.Domains.Storage.GetSharedStorageMetadataRequest GetSharedStorageMetadata(string OwnerOrigin)    
     {
       return new ChromeProtocol.Domains.Storage.GetSharedStorageMetadataRequest(OwnerOrigin);
     }
@@ -1143,7 +1143,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Gets the entries in an given origin&#39;s shared storage.</summary>
-    public static ChromeProtocol.Domains.Storage.GetSharedStorageEntriesRequest GetSharedStorageEntries(string OwnerOrigin)
+    public static ChromeProtocol.Domains.Storage.GetSharedStorageEntriesRequest GetSharedStorageEntries(string OwnerOrigin)    
     {
       return new ChromeProtocol.Domains.Storage.GetSharedStorageEntriesRequest(OwnerOrigin);
     }
@@ -1166,7 +1166,7 @@ namespace ChromeProtocol.Domains
     /// If `ignoreIfPresent` is included and true, then only sets the entry if<br/>
     /// `key` doesn&#39;t already exist.<br/>
     /// </param>
-    public static ChromeProtocol.Domains.Storage.SetSharedStorageEntryRequest SetSharedStorageEntry(string OwnerOrigin, string Key, string Value, bool? IgnoreIfPresent = default)
+    public static ChromeProtocol.Domains.Storage.SetSharedStorageEntryRequest SetSharedStorageEntry(string OwnerOrigin, string Key, string Value, bool? IgnoreIfPresent = default)    
     {
       return new ChromeProtocol.Domains.Storage.SetSharedStorageEntryRequest(OwnerOrigin, Key, Value, IgnoreIfPresent);
     }
@@ -1192,7 +1192,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Deletes entry for `key` (if it exists) for a given origin&#39;s shared storage.</summary>
-    public static ChromeProtocol.Domains.Storage.DeleteSharedStorageEntryRequest DeleteSharedStorageEntry(string OwnerOrigin, string Key)
+    public static ChromeProtocol.Domains.Storage.DeleteSharedStorageEntryRequest DeleteSharedStorageEntry(string OwnerOrigin, string Key)    
     {
       return new ChromeProtocol.Domains.Storage.DeleteSharedStorageEntryRequest(OwnerOrigin, Key);
     }
@@ -1210,7 +1210,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Clears all entries for a given origin&#39;s shared storage.</summary>
-    public static ChromeProtocol.Domains.Storage.ClearSharedStorageEntriesRequest ClearSharedStorageEntries(string OwnerOrigin)
+    public static ChromeProtocol.Domains.Storage.ClearSharedStorageEntriesRequest ClearSharedStorageEntries(string OwnerOrigin)    
     {
       return new ChromeProtocol.Domains.Storage.ClearSharedStorageEntriesRequest(OwnerOrigin);
     }
@@ -1226,7 +1226,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Resets the budget for `ownerOrigin` by clearing all budget withdrawals.</summary>
-    public static ChromeProtocol.Domains.Storage.ResetSharedStorageBudgetRequest ResetSharedStorageBudget(string OwnerOrigin)
+    public static ChromeProtocol.Domains.Storage.ResetSharedStorageBudgetRequest ResetSharedStorageBudget(string OwnerOrigin)    
     {
       return new ChromeProtocol.Domains.Storage.ResetSharedStorageBudgetRequest(OwnerOrigin);
     }
@@ -1242,7 +1242,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Enables/disables issuing of sharedStorageAccessed events.</summary>
-    public static ChromeProtocol.Domains.Storage.SetSharedStorageTrackingRequest SetSharedStorageTracking(bool Enable)
+    public static ChromeProtocol.Domains.Storage.SetSharedStorageTrackingRequest SetSharedStorageTracking(bool Enable)    
     {
       return new ChromeProtocol.Domains.Storage.SetSharedStorageTrackingRequest(Enable);
     }
@@ -1258,7 +1258,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Set tracking for a storage key&#39;s buckets.</summary>
-    public static ChromeProtocol.Domains.Storage.SetStorageBucketTrackingRequest SetStorageBucketTracking(string StorageKey, bool Enable)
+    public static ChromeProtocol.Domains.Storage.SetStorageBucketTrackingRequest SetStorageBucketTracking(string StorageKey, bool Enable)    
     {
       return new ChromeProtocol.Domains.Storage.SetStorageBucketTrackingRequest(StorageKey, Enable);
     }
@@ -1276,7 +1276,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Deletes the Storage Bucket with the given storage key and bucket name.</summary>
-    public static ChromeProtocol.Domains.Storage.DeleteStorageBucketRequest DeleteStorageBucket(ChromeProtocol.Domains.Storage.StorageBucketType Bucket)
+    public static ChromeProtocol.Domains.Storage.DeleteStorageBucketRequest DeleteStorageBucket(ChromeProtocol.Domains.Storage.StorageBucketType Bucket)    
     {
       return new ChromeProtocol.Domains.Storage.DeleteStorageBucketRequest(Bucket);
     }
@@ -1292,7 +1292,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Deletes state for sites identified as potential bounce trackers, immediately.</summary>
-    public static ChromeProtocol.Domains.Storage.RunBounceTrackingMitigationsRequest RunBounceTrackingMitigations()
+    public static ChromeProtocol.Domains.Storage.RunBounceTrackingMitigationsRequest RunBounceTrackingMitigations()    
     {
       return new ChromeProtocol.Domains.Storage.RunBounceTrackingMitigationsRequest();
     }
@@ -1309,7 +1309,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>https://wicg.github.io/attribution-reporting-api/</summary>
     /// <param name="Enabled">If enabled, noise is suppressed and reports are sent immediately.</param>
-    public static ChromeProtocol.Domains.Storage.SetAttributionReportingLocalTestingModeRequest SetAttributionReportingLocalTestingMode(bool Enabled)
+    public static ChromeProtocol.Domains.Storage.SetAttributionReportingLocalTestingModeRequest SetAttributionReportingLocalTestingMode(bool Enabled)    
     {
       return new ChromeProtocol.Domains.Storage.SetAttributionReportingLocalTestingModeRequest(Enabled);
     }
@@ -1326,7 +1326,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Enables/disables issuing of Attribution Reporting events.</summary>
-    public static ChromeProtocol.Domains.Storage.SetAttributionReportingTrackingRequest SetAttributionReportingTracking(bool Enable)
+    public static ChromeProtocol.Domains.Storage.SetAttributionReportingTrackingRequest SetAttributionReportingTracking(bool Enable)    
     {
       return new ChromeProtocol.Domains.Storage.SetAttributionReportingTrackingRequest(Enable);
     }

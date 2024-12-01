@@ -7,20 +7,20 @@ namespace ChromeProtocol.Domains
   public static partial class Page
   {
     /// <summary>Unique frame identifier.</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record FrameIdType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
     /// <summary>Indicates whether a frame has been identified as an ad.</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record AdFrameTypeType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record AdFrameExplanationType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -53,20 +53,20 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Indicates whether the frame is a secure context and why it is the case.</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record SecureContextTypeType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
     /// <summary>Indicates whether the frame is cross-origin isolated and why it is the case.</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record CrossOriginIsolatedContextTypeType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record GatedAPIFeaturesType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -76,14 +76,14 @@ namespace ChromeProtocol.Domains
     /// All Permissions Policy features. This enum should match the one defined<br/>
     /// in third_party/blink/renderer/core/permissions_policy/permissions_policy_features.json5.<br/>
     /// </summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record PermissionsPolicyFeatureType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
     /// <summary>Reason for a permissions policy feature to be disabled.</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record PermissionsPolicyBlockReasonType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -111,20 +111,20 @@ namespace ChromeProtocol.Domains
     /// Origin Trial(https://www.chromium.org/blink/origin-trials) support.<br/>
     /// Status for an Origin Trial token.<br/>
     /// </summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record OriginTrialTokenStatusType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
     /// <summary>Status for an Origin Trial.</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record OriginTrialStatusType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record OriginTrialUsageRestrictionType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -274,14 +274,14 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Unique script identifier.</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record ScriptIdentifierType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
     /// <summary>Transition type.</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record TransitionTypeType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -334,7 +334,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Javascript dialog type.</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record DialogTypeType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -479,13 +479,13 @@ namespace ChromeProtocol.Domains
     ) : ChromeProtocol.Core.IType
     {
     }
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record ClientNavigationReasonType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record ClientNavigationDispositionType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -513,7 +513,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>The referring-policy used for the navigation.</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record ReferrerPolicyType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -534,28 +534,28 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Enum of possible auto-response for permission / prompt dialogs.</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record AutoResponseModeType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
     /// <summary>The type of a frameNavigated event.</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record NavigationTypeType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
     /// <summary>List of not restored reasons for back-forward cache.</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record BackForwardCacheNotRestoredReasonType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
     /// <summary>Types of not restored reasons for back-forward cache.</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record BackForwardCacheNotRestoredReasonTypeType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -968,7 +968,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Deprecated, please use addScriptToEvaluateOnNewDocument instead.</summary>
     [System.Obsolete("This command marked as deprecated in the corresponding CDP definition schema. It may be removed in the future releases.", false)]
-    public static ChromeProtocol.Domains.Page.AddScriptToEvaluateOnLoadRequest AddScriptToEvaluateOnLoad(string ScriptSource)
+    public static ChromeProtocol.Domains.Page.AddScriptToEvaluateOnLoadRequest AddScriptToEvaluateOnLoad(string ScriptSource)    
     {
       return new ChromeProtocol.Domains.Page.AddScriptToEvaluateOnLoadRequest(ScriptSource);
     }
@@ -1003,7 +1003,7 @@ namespace ChromeProtocol.Domains
     /// If true, runs the script immediately on existing execution contexts or worlds.<br/>
     /// Default: false.<br/>
     /// </param>
-    public static ChromeProtocol.Domains.Page.AddScriptToEvaluateOnNewDocumentRequest AddScriptToEvaluateOnNewDocument(string Source, string? WorldName = default, bool? IncludeCommandLineAPI = default, bool? RunImmediately = default)
+    public static ChromeProtocol.Domains.Page.AddScriptToEvaluateOnNewDocumentRequest AddScriptToEvaluateOnNewDocument(string Source, string? WorldName = default, bool? IncludeCommandLineAPI = default, bool? RunImmediately = default)    
     {
       return new ChromeProtocol.Domains.Page.AddScriptToEvaluateOnNewDocumentRequest(Source, WorldName, IncludeCommandLineAPI, RunImmediately);
     }
@@ -1042,7 +1042,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Brings page to front (activates tab).</summary>
-    public static ChromeProtocol.Domains.Page.BringToFrontRequest BringToFront()
+    public static ChromeProtocol.Domains.Page.BringToFrontRequest BringToFront()    
     {
       return new ChromeProtocol.Domains.Page.BringToFrontRequest();
     }
@@ -1061,7 +1061,7 @@ namespace ChromeProtocol.Domains
     /// <param name="FromSurface">Capture the screenshot from the surface, rather than the view. Defaults to true.</param>
     /// <param name="CaptureBeyondViewport">Capture the screenshot beyond the viewport. Defaults to false.</param>
     /// <param name="OptimizeForSpeed">Optimize image encoding for speed, not for resulting size (defaults to false)</param>
-    public static ChromeProtocol.Domains.Page.CaptureScreenshotRequest CaptureScreenshot(string? Format = default, int? Quality = default, ChromeProtocol.Domains.Page.ViewportType? Clip = default, bool? FromSurface = default, bool? CaptureBeyondViewport = default, bool? OptimizeForSpeed = default)
+    public static ChromeProtocol.Domains.Page.CaptureScreenshotRequest CaptureScreenshot(string? Format = default, int? Quality = default, ChromeProtocol.Domains.Page.ViewportType? Clip = default, bool? FromSurface = default, bool? CaptureBeyondViewport = default, bool? OptimizeForSpeed = default)    
     {
       return new ChromeProtocol.Domains.Page.CaptureScreenshotRequest(Format, Quality, Clip, FromSurface, CaptureBeyondViewport, OptimizeForSpeed);
     }
@@ -1101,7 +1101,7 @@ namespace ChromeProtocol.Domains
     /// iframes, shadow DOM, external resources, and element-inline styles.<br/>
     /// </summary>
     /// <param name="Format">Format (defaults to mhtml).</param>
-    public static ChromeProtocol.Domains.Page.CaptureSnapshotRequest CaptureSnapshot(string? Format = default)
+    public static ChromeProtocol.Domains.Page.CaptureSnapshotRequest CaptureSnapshot(string? Format = default)    
     {
       return new ChromeProtocol.Domains.Page.CaptureSnapshotRequest(Format);
     }
@@ -1126,7 +1126,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Clears the overridden device metrics.</summary>
     [System.Obsolete("This command marked as deprecated in the corresponding CDP definition schema. It may be removed in the future releases.", false)]
-    public static ChromeProtocol.Domains.Page.ClearDeviceMetricsOverrideRequest ClearDeviceMetricsOverride()
+    public static ChromeProtocol.Domains.Page.ClearDeviceMetricsOverrideRequest ClearDeviceMetricsOverride()    
     {
       return new ChromeProtocol.Domains.Page.ClearDeviceMetricsOverrideRequest();
     }
@@ -1142,7 +1142,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Clears the overridden Device Orientation.</summary>
     [System.Obsolete("This command marked as deprecated in the corresponding CDP definition schema. It may be removed in the future releases.", false)]
-    public static ChromeProtocol.Domains.Page.ClearDeviceOrientationOverrideRequest ClearDeviceOrientationOverride()
+    public static ChromeProtocol.Domains.Page.ClearDeviceOrientationOverrideRequest ClearDeviceOrientationOverride()    
     {
       return new ChromeProtocol.Domains.Page.ClearDeviceOrientationOverrideRequest();
     }
@@ -1158,7 +1158,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Clears the overridden Geolocation Position and Error.</summary>
     [System.Obsolete("This command marked as deprecated in the corresponding CDP definition schema. It may be removed in the future releases.", false)]
-    public static ChromeProtocol.Domains.Page.ClearGeolocationOverrideRequest ClearGeolocationOverride()
+    public static ChromeProtocol.Domains.Page.ClearGeolocationOverrideRequest ClearGeolocationOverride()    
     {
       return new ChromeProtocol.Domains.Page.ClearGeolocationOverrideRequest();
     }
@@ -1179,7 +1179,7 @@ namespace ChromeProtocol.Domains
     /// Whether or not universal access should be granted to the isolated world. This is a powerful<br/>
     /// option, use with caution.<br/>
     /// </param>
-    public static ChromeProtocol.Domains.Page.CreateIsolatedWorldRequest CreateIsolatedWorld(ChromeProtocol.Domains.Page.FrameIdType FrameId, string? WorldName = default, bool? GrantUniveralAccess = default)
+    public static ChromeProtocol.Domains.Page.CreateIsolatedWorldRequest CreateIsolatedWorld(ChromeProtocol.Domains.Page.FrameIdType FrameId, string? WorldName = default, bool? GrantUniveralAccess = default)    
     {
       return new ChromeProtocol.Domains.Page.CreateIsolatedWorldRequest(FrameId, WorldName, GrantUniveralAccess);
     }
@@ -1212,7 +1212,7 @@ namespace ChromeProtocol.Domains
     /// <param name="CookieName">Name of the cookie to remove.</param>
     /// <param name="Url">URL to match cooke domain and path.</param>
     [System.Obsolete("This command marked as deprecated in the corresponding CDP definition schema. It may be removed in the future releases.", false)]
-    public static ChromeProtocol.Domains.Page.DeleteCookieRequest DeleteCookie(string CookieName, string Url)
+    public static ChromeProtocol.Domains.Page.DeleteCookieRequest DeleteCookie(string CookieName, string Url)    
     {
       return new ChromeProtocol.Domains.Page.DeleteCookieRequest(CookieName, Url);
     }
@@ -1234,7 +1234,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Disables page domain notifications.</summary>
-    public static ChromeProtocol.Domains.Page.DisableRequest Disable()
+    public static ChromeProtocol.Domains.Page.DisableRequest Disable()    
     {
       return new ChromeProtocol.Domains.Page.DisableRequest();
     }
@@ -1247,7 +1247,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Enables page domain notifications.</summary>
-    public static ChromeProtocol.Domains.Page.EnableRequest Enable()
+    public static ChromeProtocol.Domains.Page.EnableRequest Enable()    
     {
       return new ChromeProtocol.Domains.Page.EnableRequest();
     }
@@ -1259,7 +1259,7 @@ namespace ChromeProtocol.Domains
     public record EnableRequestResult() : ChromeProtocol.Core.IType
     {
     }
-    public static ChromeProtocol.Domains.Page.GetAppManifestRequest GetAppManifest()
+    public static ChromeProtocol.Domains.Page.GetAppManifestRequest GetAppManifest()    
     {
       return new ChromeProtocol.Domains.Page.GetAppManifestRequest();
     }
@@ -1282,7 +1282,7 @@ namespace ChromeProtocol.Domains
     ) : ChromeProtocol.Core.IType
     {
     }
-    public static ChromeProtocol.Domains.Page.GetInstallabilityErrorsRequest GetInstallabilityErrors()
+    public static ChromeProtocol.Domains.Page.GetInstallabilityErrorsRequest GetInstallabilityErrors()    
     {
       return new ChromeProtocol.Domains.Page.GetInstallabilityErrorsRequest();
     }
@@ -1298,7 +1298,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Deprecated because it&#39;s not guaranteed that the returned icon is in fact the one used for PWA installation.</summary>
     [System.Obsolete("This command marked as deprecated in the corresponding CDP definition schema. It may be removed in the future releases.", false)]
-    public static ChromeProtocol.Domains.Page.GetManifestIconsRequest GetManifestIcons()
+    public static ChromeProtocol.Domains.Page.GetManifestIconsRequest GetManifestIcons()    
     {
       return new ChromeProtocol.Domains.Page.GetManifestIconsRequest();
     }
@@ -1319,7 +1319,7 @@ namespace ChromeProtocol.Domains
     /// Returns the unique (PWA) app id.<br/>
     /// Only returns values if the feature flag &#39;WebAppEnableManifestId&#39; is enabled<br/>
     /// </summary>
-    public static ChromeProtocol.Domains.Page.GetAppIdRequest GetAppId()
+    public static ChromeProtocol.Domains.Page.GetAppIdRequest GetAppId()    
     {
       return new ChromeProtocol.Domains.Page.GetAppIdRequest();
     }
@@ -1341,7 +1341,7 @@ namespace ChromeProtocol.Domains
     ) : ChromeProtocol.Core.IType
     {
     }
-    public static ChromeProtocol.Domains.Page.GetAdScriptIdRequest GetAdScriptId(ChromeProtocol.Domains.Page.FrameIdType FrameId)
+    public static ChromeProtocol.Domains.Page.GetAdScriptIdRequest GetAdScriptId(ChromeProtocol.Domains.Page.FrameIdType FrameId)    
     {
       return new ChromeProtocol.Domains.Page.GetAdScriptIdRequest(FrameId);
     }
@@ -1363,7 +1363,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Returns present frame tree structure.</summary>
-    public static ChromeProtocol.Domains.Page.GetFrameTreeRequest GetFrameTree()
+    public static ChromeProtocol.Domains.Page.GetFrameTreeRequest GetFrameTree()    
     {
       return new ChromeProtocol.Domains.Page.GetFrameTreeRequest();
     }
@@ -1380,7 +1380,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Returns metrics relating to the layouting of the page, such as viewport bounds/scale.</summary>
-    public static ChromeProtocol.Domains.Page.GetLayoutMetricsRequest GetLayoutMetrics()
+    public static ChromeProtocol.Domains.Page.GetLayoutMetricsRequest GetLayoutMetrics()    
     {
       return new ChromeProtocol.Domains.Page.GetLayoutMetricsRequest();
     }
@@ -1415,7 +1415,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Returns navigation history for the current page.</summary>
-    public static ChromeProtocol.Domains.Page.GetNavigationHistoryRequest GetNavigationHistory()
+    public static ChromeProtocol.Domains.Page.GetNavigationHistoryRequest GetNavigationHistory()    
     {
       return new ChromeProtocol.Domains.Page.GetNavigationHistoryRequest();
     }
@@ -1435,7 +1435,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Resets navigation history for the current page.</summary>
-    public static ChromeProtocol.Domains.Page.ResetNavigationHistoryRequest ResetNavigationHistory()
+    public static ChromeProtocol.Domains.Page.ResetNavigationHistoryRequest ResetNavigationHistory()    
     {
       return new ChromeProtocol.Domains.Page.ResetNavigationHistoryRequest();
     }
@@ -1450,7 +1450,7 @@ namespace ChromeProtocol.Domains
     /// <summary>Returns content of the given resource.</summary>
     /// <param name="FrameId">Frame id to get resource for.</param>
     /// <param name="Url">URL of the resource to get content for.</param>
-    public static ChromeProtocol.Domains.Page.GetResourceContentRequest GetResourceContent(ChromeProtocol.Domains.Page.FrameIdType FrameId, string Url)
+    public static ChromeProtocol.Domains.Page.GetResourceContentRequest GetResourceContent(ChromeProtocol.Domains.Page.FrameIdType FrameId, string Url)    
     {
       return new ChromeProtocol.Domains.Page.GetResourceContentRequest(FrameId, Url);
     }
@@ -1477,7 +1477,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Returns present frame / resource tree structure.</summary>
-    public static ChromeProtocol.Domains.Page.GetResourceTreeRequest GetResourceTree()
+    public static ChromeProtocol.Domains.Page.GetResourceTreeRequest GetResourceTree()    
     {
       return new ChromeProtocol.Domains.Page.GetResourceTreeRequest();
     }
@@ -1499,7 +1499,7 @@ namespace ChromeProtocol.Domains
     /// The text to enter into the dialog prompt before accepting. Used only if this is a prompt<br/>
     /// dialog.<br/>
     /// </param>
-    public static ChromeProtocol.Domains.Page.HandleJavaScriptDialogRequest HandleJavaScriptDialog(bool Accept, string? PromptText = default)
+    public static ChromeProtocol.Domains.Page.HandleJavaScriptDialogRequest HandleJavaScriptDialog(bool Accept, string? PromptText = default)    
     {
       return new ChromeProtocol.Domains.Page.HandleJavaScriptDialogRequest(Accept, PromptText);
     }
@@ -1527,7 +1527,7 @@ namespace ChromeProtocol.Domains
     /// <param name="TransitionType">Intended transition type.</param>
     /// <param name="FrameId">Frame id to navigate, if not specified navigates the top frame.</param>
     /// <param name="ReferrerPolicy">Referrer-policy used for the navigation.</param>
-    public static ChromeProtocol.Domains.Page.NavigateRequest Navigate(string Url, string? Referrer = default, ChromeProtocol.Domains.Page.TransitionTypeType? TransitionType = default, ChromeProtocol.Domains.Page.FrameIdType? FrameId = default, ChromeProtocol.Domains.Page.ReferrerPolicyType? ReferrerPolicy = default)
+    public static ChromeProtocol.Domains.Page.NavigateRequest Navigate(string Url, string? Referrer = default, ChromeProtocol.Domains.Page.TransitionTypeType? TransitionType = default, ChromeProtocol.Domains.Page.FrameIdType? FrameId = default, ChromeProtocol.Domains.Page.ReferrerPolicyType? ReferrerPolicy = default)    
     {
       return new ChromeProtocol.Domains.Page.NavigateRequest(Url, Referrer, TransitionType, FrameId, ReferrerPolicy);
     }
@@ -1570,7 +1570,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Navigates current page to the given history entry.</summary>
     /// <param name="EntryId">Unique id of the entry to navigate to.</param>
-    public static ChromeProtocol.Domains.Page.NavigateToHistoryEntryRequest NavigateToHistoryEntry(int EntryId)
+    public static ChromeProtocol.Domains.Page.NavigateToHistoryEntryRequest NavigateToHistoryEntry(int EntryId)    
     {
       return new ChromeProtocol.Domains.Page.NavigateToHistoryEntryRequest(EntryId);
     }
@@ -1625,7 +1625,7 @@ namespace ChromeProtocol.Domains
     /// <param name="TransferMode">return as stream</param>
     /// <param name="GenerateTaggedPDF">Whether or not to generate tagged (accessible) PDF. Defaults to embedder choice.</param>
     /// <param name="GenerateDocumentOutline">Whether or not to embed the document outline into the PDF.</param>
-    public static ChromeProtocol.Domains.Page.PrintToPDFRequest PrintToPDF(bool? Landscape = default, bool? DisplayHeaderFooter = default, bool? PrintBackground = default, double? Scale = default, double? PaperWidth = default, double? PaperHeight = default, double? MarginTop = default, double? MarginBottom = default, double? MarginLeft = default, double? MarginRight = default, string? PageRanges = default, string? HeaderTemplate = default, string? FooterTemplate = default, bool? PreferCSSPageSize = default, string? TransferMode = default, bool? GenerateTaggedPDF = default, bool? GenerateDocumentOutline = default)
+    public static ChromeProtocol.Domains.Page.PrintToPDFRequest PrintToPDF(bool? Landscape = default, bool? DisplayHeaderFooter = default, bool? PrintBackground = default, double? Scale = default, double? PaperWidth = default, double? PaperHeight = default, double? MarginTop = default, double? MarginBottom = default, double? MarginLeft = default, double? MarginRight = default, string? PageRanges = default, string? HeaderTemplate = default, string? FooterTemplate = default, bool? PreferCSSPageSize = default, string? TransferMode = default, bool? GenerateTaggedPDF = default, bool? GenerateDocumentOutline = default)    
     {
       return new ChromeProtocol.Domains.Page.PrintToPDFRequest(Landscape, DisplayHeaderFooter, PrintBackground, Scale, PaperWidth, PaperHeight, MarginTop, MarginBottom, MarginLeft, MarginRight, PageRanges, HeaderTemplate, FooterTemplate, PreferCSSPageSize, TransferMode, GenerateTaggedPDF, GenerateDocumentOutline);
     }
@@ -1723,7 +1723,7 @@ namespace ChromeProtocol.Domains
     /// If set, the script will be injected into all frames of the inspected page after reload.<br/>
     /// Argument will be ignored if reloading dataURL origin.<br/>
     /// </param>
-    public static ChromeProtocol.Domains.Page.ReloadRequest Reload(bool? IgnoreCache = default, string? ScriptToEvaluateOnLoad = default)
+    public static ChromeProtocol.Domains.Page.ReloadRequest Reload(bool? IgnoreCache = default, string? ScriptToEvaluateOnLoad = default)    
     {
       return new ChromeProtocol.Domains.Page.ReloadRequest(IgnoreCache, ScriptToEvaluateOnLoad);
     }
@@ -1747,7 +1747,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Deprecated, please use removeScriptToEvaluateOnNewDocument instead.</summary>
     [System.Obsolete("This command marked as deprecated in the corresponding CDP definition schema. It may be removed in the future releases.", false)]
-    public static ChromeProtocol.Domains.Page.RemoveScriptToEvaluateOnLoadRequest RemoveScriptToEvaluateOnLoad(ChromeProtocol.Domains.Page.ScriptIdentifierType Identifier)
+    public static ChromeProtocol.Domains.Page.RemoveScriptToEvaluateOnLoadRequest RemoveScriptToEvaluateOnLoad(ChromeProtocol.Domains.Page.ScriptIdentifierType Identifier)    
     {
       return new ChromeProtocol.Domains.Page.RemoveScriptToEvaluateOnLoadRequest(Identifier);
     }
@@ -1765,7 +1765,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Removes given script from the list.</summary>
-    public static ChromeProtocol.Domains.Page.RemoveScriptToEvaluateOnNewDocumentRequest RemoveScriptToEvaluateOnNewDocument(ChromeProtocol.Domains.Page.ScriptIdentifierType Identifier)
+    public static ChromeProtocol.Domains.Page.RemoveScriptToEvaluateOnNewDocumentRequest RemoveScriptToEvaluateOnNewDocument(ChromeProtocol.Domains.Page.ScriptIdentifierType Identifier)    
     {
       return new ChromeProtocol.Domains.Page.RemoveScriptToEvaluateOnNewDocumentRequest(Identifier);
     }
@@ -1782,7 +1782,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Acknowledges that a screencast frame has been received by the frontend.</summary>
     /// <param name="SessionId">Frame number.</param>
-    public static ChromeProtocol.Domains.Page.ScreencastFrameAckRequest ScreencastFrameAck(int SessionId)
+    public static ChromeProtocol.Domains.Page.ScreencastFrameAckRequest ScreencastFrameAck(int SessionId)    
     {
       return new ChromeProtocol.Domains.Page.ScreencastFrameAckRequest(SessionId);
     }
@@ -1804,7 +1804,7 @@ namespace ChromeProtocol.Domains
     /// <param name="Query">String to search for.</param>
     /// <param name="CaseSensitive">If true, search is case sensitive.</param>
     /// <param name="IsRegex">If true, treats string parameter as regex.</param>
-    public static ChromeProtocol.Domains.Page.SearchInResourceRequest SearchInResource(ChromeProtocol.Domains.Page.FrameIdType FrameId, string Url, string Query, bool? CaseSensitive = default, bool? IsRegex = default)
+    public static ChromeProtocol.Domains.Page.SearchInResourceRequest SearchInResource(ChromeProtocol.Domains.Page.FrameIdType FrameId, string Url, string Query, bool? CaseSensitive = default, bool? IsRegex = default)    
     {
       return new ChromeProtocol.Domains.Page.SearchInResourceRequest(FrameId, Url, Query, CaseSensitive, IsRegex);
     }
@@ -1838,7 +1838,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Enable Chrome&#39;s experimental ad filter on all sites.</summary>
     /// <param name="Enabled">Whether to block ads.</param>
-    public static ChromeProtocol.Domains.Page.SetAdBlockingEnabledRequest SetAdBlockingEnabled(bool Enabled)
+    public static ChromeProtocol.Domains.Page.SetAdBlockingEnabledRequest SetAdBlockingEnabled(bool Enabled)    
     {
       return new ChromeProtocol.Domains.Page.SetAdBlockingEnabledRequest(Enabled);
     }
@@ -1856,7 +1856,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Enable page Content Security Policy by-passing.</summary>
     /// <param name="Enabled">Whether to bypass page CSP.</param>
-    public static ChromeProtocol.Domains.Page.SetBypassCSPRequest SetBypassCSP(bool Enabled)
+    public static ChromeProtocol.Domains.Page.SetBypassCSPRequest SetBypassCSP(bool Enabled)    
     {
       return new ChromeProtocol.Domains.Page.SetBypassCSPRequest(Enabled);
     }
@@ -1873,7 +1873,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Get Permissions Policy state on given frame.</summary>
-    public static ChromeProtocol.Domains.Page.GetPermissionsPolicyStateRequest GetPermissionsPolicyState(ChromeProtocol.Domains.Page.FrameIdType FrameId)
+    public static ChromeProtocol.Domains.Page.GetPermissionsPolicyStateRequest GetPermissionsPolicyState(ChromeProtocol.Domains.Page.FrameIdType FrameId)    
     {
       return new ChromeProtocol.Domains.Page.GetPermissionsPolicyStateRequest(FrameId);
     }
@@ -1892,7 +1892,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Get Origin Trials on given frame.</summary>
-    public static ChromeProtocol.Domains.Page.GetOriginTrialsRequest GetOriginTrials(ChromeProtocol.Domains.Page.FrameIdType FrameId)
+    public static ChromeProtocol.Domains.Page.GetOriginTrialsRequest GetOriginTrials(ChromeProtocol.Domains.Page.FrameIdType FrameId)    
     {
       return new ChromeProtocol.Domains.Page.GetOriginTrialsRequest(FrameId);
     }
@@ -1931,7 +1931,7 @@ namespace ChromeProtocol.Domains
     /// <param name="ScreenOrientation">Screen orientation override.</param>
     /// <param name="Viewport">The viewport dimensions and scale. If not set, the override is cleared.</param>
     [System.Obsolete("This command marked as deprecated in the corresponding CDP definition schema. It may be removed in the future releases.", false)]
-    public static ChromeProtocol.Domains.Page.SetDeviceMetricsOverrideRequest SetDeviceMetricsOverride(int Width, int Height, double DeviceScaleFactor, bool Mobile, double? Scale = default, int? ScreenWidth = default, int? ScreenHeight = default, int? PositionX = default, int? PositionY = default, bool? DontSetVisibleSize = default, ChromeProtocol.Domains.Emulation.ScreenOrientationType? ScreenOrientation = default, ChromeProtocol.Domains.Page.ViewportType? Viewport = default)
+    public static ChromeProtocol.Domains.Page.SetDeviceMetricsOverrideRequest SetDeviceMetricsOverride(int Width, int Height, double DeviceScaleFactor, bool Mobile, double? Scale = default, int? ScreenWidth = default, int? ScreenHeight = default, int? PositionX = default, int? PositionY = default, bool? DontSetVisibleSize = default, ChromeProtocol.Domains.Emulation.ScreenOrientationType? ScreenOrientation = default, ChromeProtocol.Domains.Page.ViewportType? Viewport = default)    
     {
       return new ChromeProtocol.Domains.Page.SetDeviceMetricsOverrideRequest(Width, Height, DeviceScaleFactor, Mobile, Scale, ScreenWidth, ScreenHeight, PositionX, PositionY, DontSetVisibleSize, ScreenOrientation, Viewport);
     }
@@ -1994,7 +1994,7 @@ namespace ChromeProtocol.Domains
     /// <param name="Beta">Mock beta</param>
     /// <param name="Gamma">Mock gamma</param>
     [System.Obsolete("This command marked as deprecated in the corresponding CDP definition schema. It may be removed in the future releases.", false)]
-    public static ChromeProtocol.Domains.Page.SetDeviceOrientationOverrideRequest SetDeviceOrientationOverride(double Alpha, double Beta, double Gamma)
+    public static ChromeProtocol.Domains.Page.SetDeviceOrientationOverrideRequest SetDeviceOrientationOverride(double Alpha, double Beta, double Gamma)    
     {
       return new ChromeProtocol.Domains.Page.SetDeviceOrientationOverrideRequest(Alpha, Beta, Gamma);
     }
@@ -2021,7 +2021,7 @@ namespace ChromeProtocol.Domains
     /// <summary>Set generic font families.</summary>
     /// <param name="FontFamilies">Specifies font families to set. If a font family is not specified, it won&#39;t be changed.</param>
     /// <param name="ForScripts">Specifies font families to set for individual scripts.</param>
-    public static ChromeProtocol.Domains.Page.SetFontFamiliesRequest SetFontFamilies(ChromeProtocol.Domains.Page.FontFamiliesType FontFamilies, System.Collections.Generic.IReadOnlyList<ChromeProtocol.Domains.Page.ScriptFontFamiliesType>? ForScripts = default)
+    public static ChromeProtocol.Domains.Page.SetFontFamiliesRequest SetFontFamilies(ChromeProtocol.Domains.Page.FontFamiliesType FontFamilies, System.Collections.Generic.IReadOnlyList<ChromeProtocol.Domains.Page.ScriptFontFamiliesType>? ForScripts = default)    
     {
       return new ChromeProtocol.Domains.Page.SetFontFamiliesRequest(FontFamilies, ForScripts);
     }
@@ -2042,7 +2042,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Set default font sizes.</summary>
     /// <param name="FontSizes">Specifies font sizes to set. If a font size is not specified, it won&#39;t be changed.</param>
-    public static ChromeProtocol.Domains.Page.SetFontSizesRequest SetFontSizes(ChromeProtocol.Domains.Page.FontSizesType FontSizes)
+    public static ChromeProtocol.Domains.Page.SetFontSizesRequest SetFontSizes(ChromeProtocol.Domains.Page.FontSizesType FontSizes)    
     {
       return new ChromeProtocol.Domains.Page.SetFontSizesRequest(FontSizes);
     }
@@ -2061,7 +2061,7 @@ namespace ChromeProtocol.Domains
     /// <summary>Sets given markup as the document&#39;s HTML.</summary>
     /// <param name="FrameId">Frame id to set HTML for.</param>
     /// <param name="Html">HTML content to set.</param>
-    public static ChromeProtocol.Domains.Page.SetDocumentContentRequest SetDocumentContent(ChromeProtocol.Domains.Page.FrameIdType FrameId, string Html)
+    public static ChromeProtocol.Domains.Page.SetDocumentContentRequest SetDocumentContent(ChromeProtocol.Domains.Page.FrameIdType FrameId, string Html)    
     {
       return new ChromeProtocol.Domains.Page.SetDocumentContentRequest(FrameId, Html);
     }
@@ -2087,7 +2087,7 @@ namespace ChromeProtocol.Domains
     /// </param>
     /// <param name="DownloadPath">The default path to save downloaded files to. This is required if behavior is set to &#39;allow&#39;</param>
     [System.Obsolete("This command marked as deprecated in the corresponding CDP definition schema. It may be removed in the future releases.", false)]
-    public static ChromeProtocol.Domains.Page.SetDownloadBehaviorRequest SetDownloadBehavior(string Behavior, string? DownloadPath = default)
+    public static ChromeProtocol.Domains.Page.SetDownloadBehaviorRequest SetDownloadBehavior(string Behavior, string? DownloadPath = default)    
     {
       return new ChromeProtocol.Domains.Page.SetDownloadBehaviorRequest(Behavior, DownloadPath);
     }
@@ -2119,7 +2119,7 @@ namespace ChromeProtocol.Domains
     /// <param name="Longitude">Mock longitude</param>
     /// <param name="Accuracy">Mock accuracy</param>
     [System.Obsolete("This command marked as deprecated in the corresponding CDP definition schema. It may be removed in the future releases.", false)]
-    public static ChromeProtocol.Domains.Page.SetGeolocationOverrideRequest SetGeolocationOverride(double? Latitude = default, double? Longitude = default, double? Accuracy = default)
+    public static ChromeProtocol.Domains.Page.SetGeolocationOverrideRequest SetGeolocationOverride(double? Latitude = default, double? Longitude = default, double? Accuracy = default)    
     {
       return new ChromeProtocol.Domains.Page.SetGeolocationOverrideRequest(Latitude, Longitude, Accuracy);
     }
@@ -2148,7 +2148,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Controls whether page will emit lifecycle events.</summary>
     /// <param name="Enabled">If true, starts emitting lifecycle events.</param>
-    public static ChromeProtocol.Domains.Page.SetLifecycleEventsEnabledRequest SetLifecycleEventsEnabled(bool Enabled)
+    public static ChromeProtocol.Domains.Page.SetLifecycleEventsEnabledRequest SetLifecycleEventsEnabled(bool Enabled)    
     {
       return new ChromeProtocol.Domains.Page.SetLifecycleEventsEnabledRequest(Enabled);
     }
@@ -2168,7 +2168,7 @@ namespace ChromeProtocol.Domains
     /// <param name="Enabled">Whether the touch event emulation should be enabled.</param>
     /// <param name="Configuration">Touch/gesture events configuration. Default: current platform.</param>
     [System.Obsolete("This command marked as deprecated in the corresponding CDP definition schema. It may be removed in the future releases.", false)]
-    public static ChromeProtocol.Domains.Page.SetTouchEmulationEnabledRequest SetTouchEmulationEnabled(bool Enabled, string? Configuration = default)
+    public static ChromeProtocol.Domains.Page.SetTouchEmulationEnabledRequest SetTouchEmulationEnabled(bool Enabled, string? Configuration = default)    
     {
       return new ChromeProtocol.Domains.Page.SetTouchEmulationEnabledRequest(Enabled, Configuration);
     }
@@ -2195,7 +2195,7 @@ namespace ChromeProtocol.Domains
     /// <param name="MaxWidth">Maximum screenshot width.</param>
     /// <param name="MaxHeight">Maximum screenshot height.</param>
     /// <param name="EveryNthFrame">Send every n-th frame.</param>
-    public static ChromeProtocol.Domains.Page.StartScreencastRequest StartScreencast(string? Format = default, int? Quality = default, int? MaxWidth = default, int? MaxHeight = default, int? EveryNthFrame = default)
+    public static ChromeProtocol.Domains.Page.StartScreencastRequest StartScreencast(string? Format = default, int? Quality = default, int? MaxWidth = default, int? MaxHeight = default, int? EveryNthFrame = default)    
     {
       return new ChromeProtocol.Domains.Page.StartScreencastRequest(Format, Quality, MaxWidth, MaxHeight, EveryNthFrame);
     }
@@ -2224,7 +2224,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Force the page stop all navigations and pending resource fetches.</summary>
-    public static ChromeProtocol.Domains.Page.StopLoadingRequest StopLoading()
+    public static ChromeProtocol.Domains.Page.StopLoadingRequest StopLoading()    
     {
       return new ChromeProtocol.Domains.Page.StopLoadingRequest();
     }
@@ -2237,7 +2237,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Crashes renderer on the IO thread, generates minidumps.</summary>
-    public static ChromeProtocol.Domains.Page.CrashRequest Crash()
+    public static ChromeProtocol.Domains.Page.CrashRequest Crash()    
     {
       return new ChromeProtocol.Domains.Page.CrashRequest();
     }
@@ -2250,7 +2250,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Tries to close page, running its beforeunload hooks, if any.</summary>
-    public static ChromeProtocol.Domains.Page.CloseRequest Close()
+    public static ChromeProtocol.Domains.Page.CloseRequest Close()    
     {
       return new ChromeProtocol.Domains.Page.CloseRequest();
     }
@@ -2268,7 +2268,7 @@ namespace ChromeProtocol.Domains
     /// https://github.com/WICG/web-lifecycle/<br/>
     /// </summary>
     /// <param name="State">Target lifecycle state</param>
-    public static ChromeProtocol.Domains.Page.SetWebLifecycleStateRequest SetWebLifecycleState(string State)
+    public static ChromeProtocol.Domains.Page.SetWebLifecycleStateRequest SetWebLifecycleState(string State)    
     {
       return new ChromeProtocol.Domains.Page.SetWebLifecycleStateRequest(State);
     }
@@ -2289,7 +2289,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Stops sending each frame in the `screencastFrame`.</summary>
-    public static ChromeProtocol.Domains.Page.StopScreencastRequest StopScreencast()
+    public static ChromeProtocol.Domains.Page.StopScreencastRequest StopScreencast()    
     {
       return new ChromeProtocol.Domains.Page.StopScreencastRequest();
     }
@@ -2309,7 +2309,7 @@ namespace ChromeProtocol.Domains
     /// produced upon backend discretion, based on internal heuristics.<br/>
     /// See also: `Page.compilationCacheProduced`.<br/>
     /// </summary>
-    public static ChromeProtocol.Domains.Page.ProduceCompilationCacheRequest ProduceCompilationCache(System.Collections.Generic.IReadOnlyList<ChromeProtocol.Domains.Page.CompilationCacheParamsType> Scripts)
+    public static ChromeProtocol.Domains.Page.ProduceCompilationCacheRequest ProduceCompilationCache(System.Collections.Generic.IReadOnlyList<ChromeProtocol.Domains.Page.CompilationCacheParamsType> Scripts)    
     {
       return new ChromeProtocol.Domains.Page.ProduceCompilationCacheRequest(Scripts);
     }
@@ -2336,7 +2336,7 @@ namespace ChromeProtocol.Domains
     /// cross-process navigation.<br/>
     /// </summary>
     /// <param name="Data">Base64-encoded data (Encoded as a base64 string when passed over JSON)</param>
-    public static ChromeProtocol.Domains.Page.AddCompilationCacheRequest AddCompilationCache(string Url, string Data)
+    public static ChromeProtocol.Domains.Page.AddCompilationCacheRequest AddCompilationCache(string Url, string Data)    
     {
       return new ChromeProtocol.Domains.Page.AddCompilationCacheRequest(Url, Data);
     }
@@ -2358,7 +2358,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Clears seeded compilation cache.</summary>
-    public static ChromeProtocol.Domains.Page.ClearCompilationCacheRequest ClearCompilationCache()
+    public static ChromeProtocol.Domains.Page.ClearCompilationCacheRequest ClearCompilationCache()    
     {
       return new ChromeProtocol.Domains.Page.ClearCompilationCacheRequest();
     }
@@ -2374,7 +2374,7 @@ namespace ChromeProtocol.Domains
     /// Sets the Secure Payment Confirmation transaction mode.<br/>
     /// https://w3c.github.io/secure-payment-confirmation/#sctn-automation-set-spc-transaction-mode<br/>
     /// </summary>
-    public static ChromeProtocol.Domains.Page.SetSPCTransactionModeRequest SetSPCTransactionMode(ChromeProtocol.Domains.Page.AutoResponseModeType Mode)
+    public static ChromeProtocol.Domains.Page.SetSPCTransactionModeRequest SetSPCTransactionMode(ChromeProtocol.Domains.Page.AutoResponseModeType Mode)    
     {
       return new ChromeProtocol.Domains.Page.SetSPCTransactionModeRequest(Mode);
     }
@@ -2396,7 +2396,7 @@ namespace ChromeProtocol.Domains
     /// Extensions for Custom Handlers API:<br/>
     /// https://html.spec.whatwg.org/multipage/system-state.html#rph-automation<br/>
     /// </summary>
-    public static ChromeProtocol.Domains.Page.SetRPHRegistrationModeRequest SetRPHRegistrationMode(ChromeProtocol.Domains.Page.AutoResponseModeType Mode)
+    public static ChromeProtocol.Domains.Page.SetRPHRegistrationModeRequest SetRPHRegistrationMode(ChromeProtocol.Domains.Page.AutoResponseModeType Mode)    
     {
       return new ChromeProtocol.Domains.Page.SetRPHRegistrationModeRequest(Mode);
     }
@@ -2417,7 +2417,7 @@ namespace ChromeProtocol.Domains
     /// <summary>Generates a report for testing.</summary>
     /// <param name="Message">Message to be displayed in the report.</param>
     /// <param name="Group">Specifies the endpoint group to deliver the report to.</param>
-    public static ChromeProtocol.Domains.Page.GenerateTestReportRequest GenerateTestReport(string Message, string? Group = default)
+    public static ChromeProtocol.Domains.Page.GenerateTestReportRequest GenerateTestReport(string Message, string? Group = default)    
     {
       return new ChromeProtocol.Domains.Page.GenerateTestReportRequest(Message, Group);
     }
@@ -2437,7 +2437,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Pauses page execution. Can be resumed using generic Runtime.runIfWaitingForDebugger.</summary>
-    public static ChromeProtocol.Domains.Page.WaitForDebuggerRequest WaitForDebugger()
+    public static ChromeProtocol.Domains.Page.WaitForDebuggerRequest WaitForDebugger()    
     {
       return new ChromeProtocol.Domains.Page.WaitForDebuggerRequest();
     }
@@ -2454,7 +2454,7 @@ namespace ChromeProtocol.Domains
     /// When file chooser interception is enabled, native file chooser dialog is not shown.<br/>
     /// Instead, a protocol event `Page.fileChooserOpened` is emitted.<br/>
     /// </summary>
-    public static ChromeProtocol.Domains.Page.SetInterceptFileChooserDialogRequest SetInterceptFileChooserDialog(bool Enabled)
+    public static ChromeProtocol.Domains.Page.SetInterceptFileChooserDialogRequest SetInterceptFileChooserDialog(bool Enabled)    
     {
       return new ChromeProtocol.Domains.Page.SetInterceptFileChooserDialogRequest(Enabled);
     }
@@ -2480,7 +2480,7 @@ namespace ChromeProtocol.Domains
     /// for more details.<br/>
     /// TODO(https://crbug.com/1440085): Remove this once Puppeteer supports tab targets.<br/>
     /// </summary>
-    public static ChromeProtocol.Domains.Page.SetPrerenderingAllowedRequest SetPrerenderingAllowed(bool IsAllowed)
+    public static ChromeProtocol.Domains.Page.SetPrerenderingAllowedRequest SetPrerenderingAllowed(bool IsAllowed)    
     {
       return new ChromeProtocol.Domains.Page.SetPrerenderingAllowedRequest(IsAllowed);
     }

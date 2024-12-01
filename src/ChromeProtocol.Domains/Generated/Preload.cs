@@ -6,7 +6,7 @@ namespace ChromeProtocol.Domains
   public static partial class Preload
   {
     /// <summary>Unique id</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record RuleSetIdType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -59,7 +59,7 @@ namespace ChromeProtocol.Domains
     ) : ChromeProtocol.Core.IType
     {
     }
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record RuleSetErrorTypeType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -70,7 +70,7 @@ namespace ChromeProtocol.Domains
     /// mojom::SpeculationAction (although PrefetchWithSubresources is omitted as it<br/>
     /// isn&#39;t being used by clients).<br/>
     /// </summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record SpeculationActionType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -80,7 +80,7 @@ namespace ChromeProtocol.Domains
     /// Corresponds to mojom::SpeculationTargetHint.<br/>
     /// See https://github.com/WICG/nav-speculation/blob/main/triggers.md#window-name-targeting-hints<br/>
     /// </summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record SpeculationTargetHintType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -123,7 +123,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>List of FinalStatus reasons for Prerender2.</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record PrerenderFinalStatusType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -133,7 +133,7 @@ namespace ChromeProtocol.Domains
     /// Preloading status values, see also PreloadingTriggeringOutcome. This<br/>
     /// status is shared by prefetchStatusUpdated and prerenderStatusUpdated.<br/>
     /// </summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record PreloadingStatusType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -143,7 +143,7 @@ namespace ChromeProtocol.Domains
     /// TODO(https://crbug.com/1384419): revisit the list of PrefetchStatus and<br/>
     /// filter out the ones that aren&#39;t necessary to the developers.<br/>
     /// </summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record PrefetchStatusType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -240,7 +240,7 @@ namespace ChromeProtocol.Domains
     ) : ChromeProtocol.Core.IEvent
     {
     }
-    public static ChromeProtocol.Domains.Preload.EnableRequest Enable()
+    public static ChromeProtocol.Domains.Preload.EnableRequest Enable()    
     {
       return new ChromeProtocol.Domains.Preload.EnableRequest();
     }
@@ -251,7 +251,7 @@ namespace ChromeProtocol.Domains
     public record EnableRequestResult() : ChromeProtocol.Core.IType
     {
     }
-    public static ChromeProtocol.Domains.Preload.DisableRequest Disable()
+    public static ChromeProtocol.Domains.Preload.DisableRequest Disable()    
     {
       return new ChromeProtocol.Domains.Preload.DisableRequest();
     }

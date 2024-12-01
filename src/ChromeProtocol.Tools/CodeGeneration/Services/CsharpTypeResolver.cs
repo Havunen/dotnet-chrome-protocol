@@ -12,6 +12,7 @@ public static class CsharpTypeResolver
       (kind, typeRef) switch
       {
         (TypeKind.String, _) => CsharpTypeInfo.FromFullyQualifiedName("string"),
+        (TypeKind.Binary, _) => CsharpTypeInfo.FromFullyQualifiedName("string"),
         (TypeKind.Number, _) => CsharpTypeInfo.FromFullyQualifiedName("double"),
         (TypeKind.Integer, _) => CsharpTypeInfo.FromFullyQualifiedName("int"),
         (TypeKind.Boolean, _) => CsharpTypeInfo.FromFullyQualifiedName("bool"),

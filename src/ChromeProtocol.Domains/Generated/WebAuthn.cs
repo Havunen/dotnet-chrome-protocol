@@ -9,25 +9,25 @@ namespace ChromeProtocol.Domains
   /// </summary>
   public static partial class WebAuthn
   {
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record AuthenticatorIdType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record AuthenticatorProtocolType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record Ctap2VersionType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record AuthenticatorTransportType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -185,7 +185,7 @@ namespace ChromeProtocol.Domains
     /// Supported at the embedder&#39;s discretion if UI is available.<br/>
     /// Defaults to false.<br/>
     /// </param>
-    public static ChromeProtocol.Domains.WebAuthn.EnableRequest Enable(bool? EnableUI = default)
+    public static ChromeProtocol.Domains.WebAuthn.EnableRequest Enable(bool? EnableUI = default)    
     {
       return new ChromeProtocol.Domains.WebAuthn.EnableRequest(EnableUI);
     }
@@ -211,7 +211,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Disable the WebAuthn domain.</summary>
-    public static ChromeProtocol.Domains.WebAuthn.DisableRequest Disable()
+    public static ChromeProtocol.Domains.WebAuthn.DisableRequest Disable()    
     {
       return new ChromeProtocol.Domains.WebAuthn.DisableRequest();
     }
@@ -224,7 +224,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Creates and adds a virtual authenticator.</summary>
-    public static ChromeProtocol.Domains.WebAuthn.AddVirtualAuthenticatorRequest AddVirtualAuthenticator(ChromeProtocol.Domains.WebAuthn.VirtualAuthenticatorOptionsType Options)
+    public static ChromeProtocol.Domains.WebAuthn.AddVirtualAuthenticatorRequest AddVirtualAuthenticator(ChromeProtocol.Domains.WebAuthn.VirtualAuthenticatorOptionsType Options)    
     {
       return new ChromeProtocol.Domains.WebAuthn.AddVirtualAuthenticatorRequest(Options);
     }
@@ -255,7 +255,7 @@ namespace ChromeProtocol.Domains
     /// If isBadUP is set, overrides the UP bit in the flags in the authenticator response to<br/>
     /// be zero. Defaults to false.<br/>
     /// </param>
-    public static ChromeProtocol.Domains.WebAuthn.SetResponseOverrideBitsRequest SetResponseOverrideBits(ChromeProtocol.Domains.WebAuthn.AuthenticatorIdType AuthenticatorId, bool? IsBogusSignature = default, bool? IsBadUV = default, bool? IsBadUP = default)
+    public static ChromeProtocol.Domains.WebAuthn.SetResponseOverrideBitsRequest SetResponseOverrideBits(ChromeProtocol.Domains.WebAuthn.AuthenticatorIdType AuthenticatorId, bool? IsBogusSignature = default, bool? IsBadUV = default, bool? IsBadUP = default)    
     {
       return new ChromeProtocol.Domains.WebAuthn.SetResponseOverrideBitsRequest(AuthenticatorId, IsBogusSignature, IsBadUV, IsBadUP);
     }
@@ -289,7 +289,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Removes the given authenticator.</summary>
-    public static ChromeProtocol.Domains.WebAuthn.RemoveVirtualAuthenticatorRequest RemoveVirtualAuthenticator(ChromeProtocol.Domains.WebAuthn.AuthenticatorIdType AuthenticatorId)
+    public static ChromeProtocol.Domains.WebAuthn.RemoveVirtualAuthenticatorRequest RemoveVirtualAuthenticator(ChromeProtocol.Domains.WebAuthn.AuthenticatorIdType AuthenticatorId)    
     {
       return new ChromeProtocol.Domains.WebAuthn.RemoveVirtualAuthenticatorRequest(AuthenticatorId);
     }
@@ -305,7 +305,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Adds the credential to the specified authenticator.</summary>
-    public static ChromeProtocol.Domains.WebAuthn.AddCredentialRequest AddCredential(ChromeProtocol.Domains.WebAuthn.AuthenticatorIdType AuthenticatorId, ChromeProtocol.Domains.WebAuthn.CredentialType Credential)
+    public static ChromeProtocol.Domains.WebAuthn.AddCredentialRequest AddCredential(ChromeProtocol.Domains.WebAuthn.AuthenticatorIdType AuthenticatorId, ChromeProtocol.Domains.WebAuthn.CredentialType Credential)    
     {
       return new ChromeProtocol.Domains.WebAuthn.AddCredentialRequest(AuthenticatorId, Credential);
     }
@@ -326,7 +326,7 @@ namespace ChromeProtocol.Domains
     /// Returns a single credential stored in the given virtual authenticator that<br/>
     /// matches the credential ID.<br/>
     /// </summary>
-    public static ChromeProtocol.Domains.WebAuthn.GetCredentialRequest GetCredential(ChromeProtocol.Domains.WebAuthn.AuthenticatorIdType AuthenticatorId, string CredentialId)
+    public static ChromeProtocol.Domains.WebAuthn.GetCredentialRequest GetCredential(ChromeProtocol.Domains.WebAuthn.AuthenticatorIdType AuthenticatorId, string CredentialId)    
     {
       return new ChromeProtocol.Domains.WebAuthn.GetCredentialRequest(AuthenticatorId, CredentialId);
     }
@@ -350,7 +350,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Returns all the credentials stored in the given virtual authenticator.</summary>
-    public static ChromeProtocol.Domains.WebAuthn.GetCredentialsRequest GetCredentials(ChromeProtocol.Domains.WebAuthn.AuthenticatorIdType AuthenticatorId)
+    public static ChromeProtocol.Domains.WebAuthn.GetCredentialsRequest GetCredentials(ChromeProtocol.Domains.WebAuthn.AuthenticatorIdType AuthenticatorId)    
     {
       return new ChromeProtocol.Domains.WebAuthn.GetCredentialsRequest(AuthenticatorId);
     }
@@ -369,7 +369,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Removes a credential from the authenticator.</summary>
-    public static ChromeProtocol.Domains.WebAuthn.RemoveCredentialRequest RemoveCredential(ChromeProtocol.Domains.WebAuthn.AuthenticatorIdType AuthenticatorId, string CredentialId)
+    public static ChromeProtocol.Domains.WebAuthn.RemoveCredentialRequest RemoveCredential(ChromeProtocol.Domains.WebAuthn.AuthenticatorIdType AuthenticatorId, string CredentialId)    
     {
       return new ChromeProtocol.Domains.WebAuthn.RemoveCredentialRequest(AuthenticatorId, CredentialId);
     }
@@ -387,7 +387,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Clears all the credentials from the specified device.</summary>
-    public static ChromeProtocol.Domains.WebAuthn.ClearCredentialsRequest ClearCredentials(ChromeProtocol.Domains.WebAuthn.AuthenticatorIdType AuthenticatorId)
+    public static ChromeProtocol.Domains.WebAuthn.ClearCredentialsRequest ClearCredentials(ChromeProtocol.Domains.WebAuthn.AuthenticatorIdType AuthenticatorId)    
     {
       return new ChromeProtocol.Domains.WebAuthn.ClearCredentialsRequest(AuthenticatorId);
     }
@@ -406,7 +406,7 @@ namespace ChromeProtocol.Domains
     /// Sets whether User Verification succeeds or fails for an authenticator.<br/>
     /// The default is true.<br/>
     /// </summary>
-    public static ChromeProtocol.Domains.WebAuthn.SetUserVerifiedRequest SetUserVerified(ChromeProtocol.Domains.WebAuthn.AuthenticatorIdType AuthenticatorId, bool IsUserVerified)
+    public static ChromeProtocol.Domains.WebAuthn.SetUserVerifiedRequest SetUserVerified(ChromeProtocol.Domains.WebAuthn.AuthenticatorIdType AuthenticatorId, bool IsUserVerified)    
     {
       return new ChromeProtocol.Domains.WebAuthn.SetUserVerifiedRequest(AuthenticatorId, IsUserVerified);
     }
@@ -430,7 +430,7 @@ namespace ChromeProtocol.Domains
     /// Sets whether tests of user presence will succeed immediately (if true) or fail to resolve (if false) for an authenticator.<br/>
     /// The default is true.<br/>
     /// </summary>
-    public static ChromeProtocol.Domains.WebAuthn.SetAutomaticPresenceSimulationRequest SetAutomaticPresenceSimulation(ChromeProtocol.Domains.WebAuthn.AuthenticatorIdType AuthenticatorId, bool Enabled)
+    public static ChromeProtocol.Domains.WebAuthn.SetAutomaticPresenceSimulationRequest SetAutomaticPresenceSimulation(ChromeProtocol.Domains.WebAuthn.AuthenticatorIdType AuthenticatorId, bool Enabled)    
     {
       return new ChromeProtocol.Domains.WebAuthn.SetAutomaticPresenceSimulationRequest(AuthenticatorId, Enabled);
     }
@@ -454,7 +454,7 @@ namespace ChromeProtocol.Domains
     /// Allows setting credential properties.<br/>
     /// https://w3c.github.io/webauthn/#sctn-automation-set-credential-properties<br/>
     /// </summary>
-    public static ChromeProtocol.Domains.WebAuthn.SetCredentialPropertiesRequest SetCredentialProperties(ChromeProtocol.Domains.WebAuthn.AuthenticatorIdType AuthenticatorId, string CredentialId, bool? BackupEligibility = default, bool? BackupState = default)
+    public static ChromeProtocol.Domains.WebAuthn.SetCredentialPropertiesRequest SetCredentialProperties(ChromeProtocol.Domains.WebAuthn.AuthenticatorIdType AuthenticatorId, string CredentialId, bool? BackupEligibility = default, bool? BackupState = default)    
     {
       return new ChromeProtocol.Domains.WebAuthn.SetCredentialPropertiesRequest(AuthenticatorId, CredentialId, BackupEligibility, BackupState);
     }

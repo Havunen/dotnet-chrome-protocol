@@ -6,28 +6,28 @@ namespace ChromeProtocol.Domains
   public static partial class Accessibility
   {
     /// <summary>Unique accessibility node identifier.</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record AXNodeIdType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
     /// <summary>Enum of possible property types.</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record AXValueTypeType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
     /// <summary>Enum of possible property sources.</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record AXValueSourceTypeType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
     /// <summary>Enum of possible native property sources (as a subtype of a particular AXValueSourceType).</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record AXValueNativeSourceTypeType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -113,7 +113,7 @@ namespace ChromeProtocol.Domains
     /// - from &#39;checked&#39; to &#39;selected&#39;: states which apply to widgets<br/>
     /// - from &#39;activedescendant&#39; to &#39;owns&#39; - relationships between elements other than parent/child/sibling.<br/>
     /// </summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record AXPropertyNameType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -185,7 +185,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Disables the accessibility domain.</summary>
-    public static ChromeProtocol.Domains.Accessibility.DisableRequest Disable()
+    public static ChromeProtocol.Domains.Accessibility.DisableRequest Disable()    
     {
       return new ChromeProtocol.Domains.Accessibility.DisableRequest();
     }
@@ -201,7 +201,7 @@ namespace ChromeProtocol.Domains
     /// Enables the accessibility domain which causes `AXNodeId`s to remain consistent between method calls.<br/>
     /// This turns on accessibility for the page, which can impact performance until accessibility is disabled.<br/>
     /// </summary>
-    public static ChromeProtocol.Domains.Accessibility.EnableRequest Enable()
+    public static ChromeProtocol.Domains.Accessibility.EnableRequest Enable()    
     {
       return new ChromeProtocol.Domains.Accessibility.EnableRequest();
     }
@@ -221,7 +221,7 @@ namespace ChromeProtocol.Domains
     /// <param name="BackendNodeId">Identifier of the backend node to get the partial accessibility tree for.</param>
     /// <param name="ObjectId">JavaScript object id of the node wrapper to get the partial accessibility tree for.</param>
     /// <param name="FetchRelatives">Whether to fetch this node&#39;s ancestors, siblings and children. Defaults to true.</param>
-    public static ChromeProtocol.Domains.Accessibility.GetPartialAXTreeRequest GetPartialAXTree(ChromeProtocol.Domains.DOM.NodeIdType? NodeId = default, ChromeProtocol.Domains.DOM.BackendNodeIdType? BackendNodeId = default, ChromeProtocol.Domains.Runtime.RemoteObjectIdType? ObjectId = default, bool? FetchRelatives = default)
+    public static ChromeProtocol.Domains.Accessibility.GetPartialAXTreeRequest GetPartialAXTree(ChromeProtocol.Domains.DOM.NodeIdType? NodeId = default, ChromeProtocol.Domains.DOM.BackendNodeIdType? BackendNodeId = default, ChromeProtocol.Domains.Runtime.RemoteObjectIdType? ObjectId = default, bool? FetchRelatives = default)    
     {
       return new ChromeProtocol.Domains.Accessibility.GetPartialAXTreeRequest(NodeId, BackendNodeId, ObjectId, FetchRelatives);
     }
@@ -262,7 +262,7 @@ namespace ChromeProtocol.Domains
     /// The frame for whose document the AX tree should be retrieved.<br/>
     /// If omitted, the root frame is used.<br/>
     /// </param>
-    public static ChromeProtocol.Domains.Accessibility.GetFullAXTreeRequest GetFullAXTree(int? Depth = default, ChromeProtocol.Domains.Page.FrameIdType? FrameId = default)
+    public static ChromeProtocol.Domains.Accessibility.GetFullAXTreeRequest GetFullAXTree(int? Depth = default, ChromeProtocol.Domains.Page.FrameIdType? FrameId = default)    
     {
       return new ChromeProtocol.Domains.Accessibility.GetFullAXTreeRequest(Depth, FrameId);
     }
@@ -298,7 +298,7 @@ namespace ChromeProtocol.Domains
     /// The frame in whose document the node resides.<br/>
     /// If omitted, the root frame is used.<br/>
     /// </param>
-    public static ChromeProtocol.Domains.Accessibility.GetRootAXNodeRequest GetRootAXNode(ChromeProtocol.Domains.Page.FrameIdType? FrameId = default)
+    public static ChromeProtocol.Domains.Accessibility.GetRootAXNodeRequest GetRootAXNode(ChromeProtocol.Domains.Page.FrameIdType? FrameId = default)    
     {
       return new ChromeProtocol.Domains.Accessibility.GetRootAXNodeRequest(FrameId);
     }
@@ -330,7 +330,7 @@ namespace ChromeProtocol.Domains
     /// <param name="NodeId">Identifier of the node to get.</param>
     /// <param name="BackendNodeId">Identifier of the backend node to get.</param>
     /// <param name="ObjectId">JavaScript object id of the node wrapper to get.</param>
-    public static ChromeProtocol.Domains.Accessibility.GetAXNodeAndAncestorsRequest GetAXNodeAndAncestors(ChromeProtocol.Domains.DOM.NodeIdType? NodeId = default, ChromeProtocol.Domains.DOM.BackendNodeIdType? BackendNodeId = default, ChromeProtocol.Domains.Runtime.RemoteObjectIdType? ObjectId = default)
+    public static ChromeProtocol.Domains.Accessibility.GetAXNodeAndAncestorsRequest GetAXNodeAndAncestors(ChromeProtocol.Domains.DOM.NodeIdType? NodeId = default, ChromeProtocol.Domains.DOM.BackendNodeIdType? BackendNodeId = default, ChromeProtocol.Domains.Runtime.RemoteObjectIdType? ObjectId = default)    
     {
       return new ChromeProtocol.Domains.Accessibility.GetAXNodeAndAncestorsRequest(NodeId, BackendNodeId, ObjectId);
     }
@@ -366,7 +366,7 @@ namespace ChromeProtocol.Domains
     /// The frame in whose document the node resides.<br/>
     /// If omitted, the root frame is used.<br/>
     /// </param>
-    public static ChromeProtocol.Domains.Accessibility.GetChildAXNodesRequest GetChildAXNodes(ChromeProtocol.Domains.Accessibility.AXNodeIdType Id, ChromeProtocol.Domains.Page.FrameIdType? FrameId = default)
+    public static ChromeProtocol.Domains.Accessibility.GetChildAXNodesRequest GetChildAXNodes(ChromeProtocol.Domains.Accessibility.AXNodeIdType Id, ChromeProtocol.Domains.Page.FrameIdType? FrameId = default)    
     {
       return new ChromeProtocol.Domains.Accessibility.GetChildAXNodesRequest(Id, FrameId);
     }
@@ -405,7 +405,7 @@ namespace ChromeProtocol.Domains
     /// <param name="ObjectId">JavaScript object id of the node wrapper for the root to query.</param>
     /// <param name="AccessibleName">Find nodes with this computed name.</param>
     /// <param name="Role">Find nodes with this computed role.</param>
-    public static ChromeProtocol.Domains.Accessibility.QueryAXTreeRequest QueryAXTree(ChromeProtocol.Domains.DOM.NodeIdType? NodeId = default, ChromeProtocol.Domains.DOM.BackendNodeIdType? BackendNodeId = default, ChromeProtocol.Domains.Runtime.RemoteObjectIdType? ObjectId = default, string? AccessibleName = default, string? Role = default)
+    public static ChromeProtocol.Domains.Accessibility.QueryAXTreeRequest QueryAXTree(ChromeProtocol.Domains.DOM.NodeIdType? NodeId = default, ChromeProtocol.Domains.DOM.BackendNodeIdType? BackendNodeId = default, ChromeProtocol.Domains.Runtime.RemoteObjectIdType? ObjectId = default, string? AccessibleName = default, string? Role = default)    
     {
       return new ChromeProtocol.Domains.Accessibility.QueryAXTreeRequest(NodeId, BackendNodeId, ObjectId, AccessibleName, Role);
     }

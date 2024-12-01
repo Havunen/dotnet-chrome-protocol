@@ -10,56 +10,56 @@ namespace ChromeProtocol.Domains
   public static partial class WebAudio
   {
     /// <summary>An unique ID for a graph object (AudioContext, AudioNode, AudioParam) in Web Audio API</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record GraphObjectIdType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
     /// <summary>Enum of BaseAudioContext types</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record ContextTypeType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
     /// <summary>Enum of AudioContextState from the spec</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record ContextStateType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
     /// <summary>Enum of AudioNode types</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record NodeTypeType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
     /// <summary>Enum of AudioNode::ChannelCountMode from the spec</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record ChannelCountModeType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
     /// <summary>Enum of AudioNode::ChannelInterpretation from the spec</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record ChannelInterpretationType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
     /// <summary>Enum of AudioParam types</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record ParamTypeType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
     /// <summary>Enum of AudioParam::AutomationRate from the spec</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record AutomationRateType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -300,7 +300,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Enables the WebAudio domain and starts sending context lifetime events.</summary>
-    public static ChromeProtocol.Domains.WebAudio.EnableRequest Enable()
+    public static ChromeProtocol.Domains.WebAudio.EnableRequest Enable()    
     {
       return new ChromeProtocol.Domains.WebAudio.EnableRequest();
     }
@@ -313,7 +313,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Disables the WebAudio domain.</summary>
-    public static ChromeProtocol.Domains.WebAudio.DisableRequest Disable()
+    public static ChromeProtocol.Domains.WebAudio.DisableRequest Disable()    
     {
       return new ChromeProtocol.Domains.WebAudio.DisableRequest();
     }
@@ -326,7 +326,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Fetch the realtime data from the registered contexts.</summary>
-    public static ChromeProtocol.Domains.WebAudio.GetRealtimeDataRequest GetRealtimeData(ChromeProtocol.Domains.WebAudio.GraphObjectIdType ContextId)
+    public static ChromeProtocol.Domains.WebAudio.GetRealtimeDataRequest GetRealtimeData(ChromeProtocol.Domains.WebAudio.GraphObjectIdType ContextId)    
     {
       return new ChromeProtocol.Domains.WebAudio.GetRealtimeDataRequest(ContextId);
     }

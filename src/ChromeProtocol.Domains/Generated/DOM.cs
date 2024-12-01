@@ -15,7 +15,7 @@ namespace ChromeProtocol.Domains
   public static partial class DOM
   {
     /// <summary>Unique DOM node identifier.</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record NodeIdType(
       int Value
     ) : ChromeProtocol.Core.PrimitiveType<int>(Value)
@@ -25,7 +25,7 @@ namespace ChromeProtocol.Domains
     /// Unique DOM node identifier used to reference a node that may not have been pushed to the<br/>
     /// front-end.<br/>
     /// </summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record BackendNodeIdType(
       int Value
     ) : ChromeProtocol.Core.PrimitiveType<int>(Value)
@@ -45,42 +45,42 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Pseudo element type.</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record PseudoTypeType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
     /// <summary>Shadow root type.</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record ShadowRootTypeType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
     /// <summary>Document compatibility mode.</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record CompatibilityModeType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
     /// <summary>ContainerSelector physical axes</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record PhysicalAxesType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
     /// <summary>ContainerSelector logical axes</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record LogicalAxesType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
     /// <summary>Physical scroll orientation</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record ScrollOrientationType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -215,7 +215,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>An array of quad vertices, x immediately followed by y for each point, points clock-wise.</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.ArrayTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.ArrayTypeConverter))]
     public record QuadType(
       System.Collections.Generic.IReadOnlyCollection<System.Text.Json.Nodes.JsonNode> Items
     ) : ChromeProtocol.Core.IArrayType
@@ -462,7 +462,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Collects class names for the node with given id and all of it&#39;s child nodes.</summary>
     /// <param name="NodeId">Id of the node to collect class names.</param>
-    public static ChromeProtocol.Domains.DOM.CollectClassNamesFromSubtreeRequest CollectClassNamesFromSubtree(ChromeProtocol.Domains.DOM.NodeIdType NodeId)
+    public static ChromeProtocol.Domains.DOM.CollectClassNamesFromSubtreeRequest CollectClassNamesFromSubtree(ChromeProtocol.Domains.DOM.NodeIdType NodeId)    
     {
       return new ChromeProtocol.Domains.DOM.CollectClassNamesFromSubtreeRequest(NodeId);
     }
@@ -492,7 +492,7 @@ namespace ChromeProtocol.Domains
     /// Drop the copy before this node (if absent, the copy becomes the last child of<br/>
     /// `targetNodeId`).<br/>
     /// </param>
-    public static ChromeProtocol.Domains.DOM.CopyToRequest CopyTo(ChromeProtocol.Domains.DOM.NodeIdType NodeId, ChromeProtocol.Domains.DOM.NodeIdType TargetNodeId, ChromeProtocol.Domains.DOM.NodeIdType? InsertBeforeNodeId = default)
+    public static ChromeProtocol.Domains.DOM.CopyToRequest CopyTo(ChromeProtocol.Domains.DOM.NodeIdType NodeId, ChromeProtocol.Domains.DOM.NodeIdType TargetNodeId, ChromeProtocol.Domains.DOM.NodeIdType? InsertBeforeNodeId = default)    
     {
       return new ChromeProtocol.Domains.DOM.CopyToRequest(NodeId, TargetNodeId, InsertBeforeNodeId);
     }
@@ -539,7 +539,7 @@ namespace ChromeProtocol.Domains
     /// Whether or not iframes and shadow roots should be traversed when returning the subtree<br/>
     /// (default is false).<br/>
     /// </param>
-    public static ChromeProtocol.Domains.DOM.DescribeNodeRequest DescribeNode(ChromeProtocol.Domains.DOM.NodeIdType? NodeId = default, ChromeProtocol.Domains.DOM.BackendNodeIdType? BackendNodeId = default, ChromeProtocol.Domains.Runtime.RemoteObjectIdType? ObjectId = default, int? Depth = default, bool? Pierce = default)
+    public static ChromeProtocol.Domains.DOM.DescribeNodeRequest DescribeNode(ChromeProtocol.Domains.DOM.NodeIdType? NodeId = default, ChromeProtocol.Domains.DOM.BackendNodeIdType? BackendNodeId = default, ChromeProtocol.Domains.Runtime.RemoteObjectIdType? ObjectId = default, int? Depth = default, bool? Pierce = default)    
     {
       return new ChromeProtocol.Domains.DOM.DescribeNodeRequest(NodeId, BackendNodeId, ObjectId, Depth, Pierce);
     }
@@ -592,7 +592,7 @@ namespace ChromeProtocol.Domains
     /// The rect to be scrolled into view, relative to the node&#39;s border box, in CSS pixels.<br/>
     /// When omitted, center of the node will be used, similar to Element.scrollIntoView.<br/>
     /// </param>
-    public static ChromeProtocol.Domains.DOM.ScrollIntoViewIfNeededRequest ScrollIntoViewIfNeeded(ChromeProtocol.Domains.DOM.NodeIdType? NodeId = default, ChromeProtocol.Domains.DOM.BackendNodeIdType? BackendNodeId = default, ChromeProtocol.Domains.Runtime.RemoteObjectIdType? ObjectId = default, ChromeProtocol.Domains.DOM.RectType? Rect = default)
+    public static ChromeProtocol.Domains.DOM.ScrollIntoViewIfNeededRequest ScrollIntoViewIfNeeded(ChromeProtocol.Domains.DOM.NodeIdType? NodeId = default, ChromeProtocol.Domains.DOM.BackendNodeIdType? BackendNodeId = default, ChromeProtocol.Domains.Runtime.RemoteObjectIdType? ObjectId = default, ChromeProtocol.Domains.DOM.RectType? Rect = default)    
     {
       return new ChromeProtocol.Domains.DOM.ScrollIntoViewIfNeededRequest(NodeId, BackendNodeId, ObjectId, Rect);
     }
@@ -625,7 +625,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Disables DOM agent for the given page.</summary>
-    public static ChromeProtocol.Domains.DOM.DisableRequest Disable()
+    public static ChromeProtocol.Domains.DOM.DisableRequest Disable()    
     {
       return new ChromeProtocol.Domains.DOM.DisableRequest();
     }
@@ -642,7 +642,7 @@ namespace ChromeProtocol.Domains
     /// be called for that search.<br/>
     /// </summary>
     /// <param name="SearchId">Unique search session identifier.</param>
-    public static ChromeProtocol.Domains.DOM.DiscardSearchResultsRequest DiscardSearchResults(string SearchId)
+    public static ChromeProtocol.Domains.DOM.DiscardSearchResultsRequest DiscardSearchResults(string SearchId)    
     {
       return new ChromeProtocol.Domains.DOM.DiscardSearchResultsRequest(SearchId);
     }
@@ -663,7 +663,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Enables DOM agent for the given page.</summary>
     /// <param name="IncludeWhitespace">Whether to include whitespaces in the children array of returned Nodes.</param>
-    public static ChromeProtocol.Domains.DOM.EnableRequest Enable(string? IncludeWhitespace = default)
+    public static ChromeProtocol.Domains.DOM.EnableRequest Enable(string? IncludeWhitespace = default)    
     {
       return new ChromeProtocol.Domains.DOM.EnableRequest(IncludeWhitespace);
     }
@@ -683,7 +683,7 @@ namespace ChromeProtocol.Domains
     /// <param name="NodeId">Identifier of the node.</param>
     /// <param name="BackendNodeId">Identifier of the backend node.</param>
     /// <param name="ObjectId">JavaScript object id of the node wrapper.</param>
-    public static ChromeProtocol.Domains.DOM.FocusRequest Focus(ChromeProtocol.Domains.DOM.NodeIdType? NodeId = default, ChromeProtocol.Domains.DOM.BackendNodeIdType? BackendNodeId = default, ChromeProtocol.Domains.Runtime.RemoteObjectIdType? ObjectId = default)
+    public static ChromeProtocol.Domains.DOM.FocusRequest Focus(ChromeProtocol.Domains.DOM.NodeIdType? NodeId = default, ChromeProtocol.Domains.DOM.BackendNodeIdType? BackendNodeId = default, ChromeProtocol.Domains.Runtime.RemoteObjectIdType? ObjectId = default)    
     {
       return new ChromeProtocol.Domains.DOM.FocusRequest(NodeId, BackendNodeId, ObjectId);
     }
@@ -707,7 +707,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Returns attributes for the specified node.</summary>
     /// <param name="NodeId">Id of the node to retrieve attributes for.</param>
-    public static ChromeProtocol.Domains.DOM.GetAttributesRequest GetAttributes(ChromeProtocol.Domains.DOM.NodeIdType NodeId)
+    public static ChromeProtocol.Domains.DOM.GetAttributesRequest GetAttributes(ChromeProtocol.Domains.DOM.NodeIdType NodeId)    
     {
       return new ChromeProtocol.Domains.DOM.GetAttributesRequest(NodeId);
     }
@@ -731,7 +731,7 @@ namespace ChromeProtocol.Domains
     /// <param name="NodeId">Identifier of the node.</param>
     /// <param name="BackendNodeId">Identifier of the backend node.</param>
     /// <param name="ObjectId">JavaScript object id of the node wrapper.</param>
-    public static ChromeProtocol.Domains.DOM.GetBoxModelRequest GetBoxModel(ChromeProtocol.Domains.DOM.NodeIdType? NodeId = default, ChromeProtocol.Domains.DOM.BackendNodeIdType? BackendNodeId = default, ChromeProtocol.Domains.Runtime.RemoteObjectIdType? ObjectId = default)
+    public static ChromeProtocol.Domains.DOM.GetBoxModelRequest GetBoxModel(ChromeProtocol.Domains.DOM.NodeIdType? NodeId = default, ChromeProtocol.Domains.DOM.BackendNodeIdType? BackendNodeId = default, ChromeProtocol.Domains.Runtime.RemoteObjectIdType? ObjectId = default)    
     {
       return new ChromeProtocol.Domains.DOM.GetBoxModelRequest(NodeId, BackendNodeId, ObjectId);
     }
@@ -764,7 +764,7 @@ namespace ChromeProtocol.Domains
     /// <param name="NodeId">Identifier of the node.</param>
     /// <param name="BackendNodeId">Identifier of the backend node.</param>
     /// <param name="ObjectId">JavaScript object id of the node wrapper.</param>
-    public static ChromeProtocol.Domains.DOM.GetContentQuadsRequest GetContentQuads(ChromeProtocol.Domains.DOM.NodeIdType? NodeId = default, ChromeProtocol.Domains.DOM.BackendNodeIdType? BackendNodeId = default, ChromeProtocol.Domains.Runtime.RemoteObjectIdType? ObjectId = default)
+    public static ChromeProtocol.Domains.DOM.GetContentQuadsRequest GetContentQuads(ChromeProtocol.Domains.DOM.NodeIdType? NodeId = default, ChromeProtocol.Domains.DOM.BackendNodeIdType? BackendNodeId = default, ChromeProtocol.Domains.Runtime.RemoteObjectIdType? ObjectId = default)    
     {
       return new ChromeProtocol.Domains.DOM.GetContentQuadsRequest(NodeId, BackendNodeId, ObjectId);
     }
@@ -805,7 +805,7 @@ namespace ChromeProtocol.Domains
     /// Whether or not iframes and shadow roots should be traversed when returning the subtree<br/>
     /// (default is false).<br/>
     /// </param>
-    public static ChromeProtocol.Domains.DOM.GetDocumentRequest GetDocument(int? Depth = default, bool? Pierce = default)
+    public static ChromeProtocol.Domains.DOM.GetDocumentRequest GetDocument(int? Depth = default, bool? Pierce = default)    
     {
       return new ChromeProtocol.Domains.DOM.GetDocumentRequest(Depth, Pierce);
     }
@@ -851,7 +851,7 @@ namespace ChromeProtocol.Domains
     /// (default is false).<br/>
     /// </param>
     [System.Obsolete("This command marked as deprecated in the corresponding CDP definition schema. It may be removed in the future releases.", false)]
-    public static ChromeProtocol.Domains.DOM.GetFlattenedDocumentRequest GetFlattenedDocument(int? Depth = default, bool? Pierce = default)
+    public static ChromeProtocol.Domains.DOM.GetFlattenedDocumentRequest GetFlattenedDocument(int? Depth = default, bool? Pierce = default)    
     {
       return new ChromeProtocol.Domains.DOM.GetFlattenedDocumentRequest(Depth, Pierce);
     }
@@ -893,7 +893,7 @@ namespace ChromeProtocol.Domains
     /// Whether or not iframes and shadow roots in the same target should be traversed when returning the<br/>
     /// results (default is false).<br/>
     /// </param>
-    public static ChromeProtocol.Domains.DOM.GetNodesForSubtreeByStyleRequest GetNodesForSubtreeByStyle(ChromeProtocol.Domains.DOM.NodeIdType NodeId, System.Collections.Generic.IReadOnlyList<ChromeProtocol.Domains.DOM.CSSComputedStylePropertyType> ComputedStyles, bool? Pierce = default)
+    public static ChromeProtocol.Domains.DOM.GetNodesForSubtreeByStyleRequest GetNodesForSubtreeByStyle(ChromeProtocol.Domains.DOM.NodeIdType NodeId, System.Collections.Generic.IReadOnlyList<ChromeProtocol.Domains.DOM.CSSComputedStylePropertyType> ComputedStyles, bool? Pierce = default)    
     {
       return new ChromeProtocol.Domains.DOM.GetNodesForSubtreeByStyleRequest(NodeId, ComputedStyles, Pierce);
     }
@@ -930,7 +930,7 @@ namespace ChromeProtocol.Domains
     /// <param name="Y">Y coordinate.</param>
     /// <param name="IncludeUserAgentShadowDOM">False to skip to the nearest non-UA shadow root ancestor (default: false).</param>
     /// <param name="IgnorePointerEventsNone">Whether to ignore pointer-events: none on elements and hit test them.</param>
-    public static ChromeProtocol.Domains.DOM.GetNodeForLocationRequest GetNodeForLocation(int X, int Y, bool? IncludeUserAgentShadowDOM = default, bool? IgnorePointerEventsNone = default)
+    public static ChromeProtocol.Domains.DOM.GetNodeForLocationRequest GetNodeForLocation(int X, int Y, bool? IncludeUserAgentShadowDOM = default, bool? IgnorePointerEventsNone = default)    
     {
       return new ChromeProtocol.Domains.DOM.GetNodeForLocationRequest(X, Y, IncludeUserAgentShadowDOM, IgnorePointerEventsNone);
     }
@@ -972,7 +972,7 @@ namespace ChromeProtocol.Domains
     /// <param name="NodeId">Identifier of the node.</param>
     /// <param name="BackendNodeId">Identifier of the backend node.</param>
     /// <param name="ObjectId">JavaScript object id of the node wrapper.</param>
-    public static ChromeProtocol.Domains.DOM.GetOuterHTMLRequest GetOuterHTML(ChromeProtocol.Domains.DOM.NodeIdType? NodeId = default, ChromeProtocol.Domains.DOM.BackendNodeIdType? BackendNodeId = default, ChromeProtocol.Domains.Runtime.RemoteObjectIdType? ObjectId = default)
+    public static ChromeProtocol.Domains.DOM.GetOuterHTMLRequest GetOuterHTML(ChromeProtocol.Domains.DOM.NodeIdType? NodeId = default, ChromeProtocol.Domains.DOM.BackendNodeIdType? BackendNodeId = default, ChromeProtocol.Domains.Runtime.RemoteObjectIdType? ObjectId = default)    
     {
       return new ChromeProtocol.Domains.DOM.GetOuterHTMLRequest(NodeId, BackendNodeId, ObjectId);
     }
@@ -1000,7 +1000,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Returns the id of the nearest ancestor that is a relayout boundary.</summary>
     /// <param name="NodeId">Id of the node.</param>
-    public static ChromeProtocol.Domains.DOM.GetRelayoutBoundaryRequest GetRelayoutBoundary(ChromeProtocol.Domains.DOM.NodeIdType NodeId)
+    public static ChromeProtocol.Domains.DOM.GetRelayoutBoundaryRequest GetRelayoutBoundary(ChromeProtocol.Domains.DOM.NodeIdType NodeId)    
     {
       return new ChromeProtocol.Domains.DOM.GetRelayoutBoundaryRequest(NodeId);
     }
@@ -1027,7 +1027,7 @@ namespace ChromeProtocol.Domains
     /// <param name="SearchId">Unique search session identifier.</param>
     /// <param name="FromIndex">Start index of the search result to be returned.</param>
     /// <param name="ToIndex">End index of the search result to be returned.</param>
-    public static ChromeProtocol.Domains.DOM.GetSearchResultsRequest GetSearchResults(string SearchId, int FromIndex, int ToIndex)
+    public static ChromeProtocol.Domains.DOM.GetSearchResultsRequest GetSearchResults(string SearchId, int FromIndex, int ToIndex)    
     {
       return new ChromeProtocol.Domains.DOM.GetSearchResultsRequest(SearchId, FromIndex, ToIndex);
     }
@@ -1057,7 +1057,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Hides any highlight.</summary>
-    public static ChromeProtocol.Domains.DOM.HideHighlightRequest HideHighlight()
+    public static ChromeProtocol.Domains.DOM.HideHighlightRequest HideHighlight()    
     {
       return new ChromeProtocol.Domains.DOM.HideHighlightRequest();
     }
@@ -1070,7 +1070,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Highlights DOM node.</summary>
-    public static ChromeProtocol.Domains.DOM.HighlightNodeRequest HighlightNode()
+    public static ChromeProtocol.Domains.DOM.HighlightNodeRequest HighlightNode()    
     {
       return new ChromeProtocol.Domains.DOM.HighlightNodeRequest();
     }
@@ -1083,7 +1083,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Highlights given rectangle.</summary>
-    public static ChromeProtocol.Domains.DOM.HighlightRectRequest HighlightRect()
+    public static ChromeProtocol.Domains.DOM.HighlightRectRequest HighlightRect()    
     {
       return new ChromeProtocol.Domains.DOM.HighlightRectRequest();
     }
@@ -1096,7 +1096,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Marks last undoable state.</summary>
-    public static ChromeProtocol.Domains.DOM.MarkUndoableStateRequest MarkUndoableState()
+    public static ChromeProtocol.Domains.DOM.MarkUndoableStateRequest MarkUndoableState()    
     {
       return new ChromeProtocol.Domains.DOM.MarkUndoableStateRequest();
     }
@@ -1115,7 +1115,7 @@ namespace ChromeProtocol.Domains
     /// Drop node before this one (if absent, the moved node becomes the last child of<br/>
     /// `targetNodeId`).<br/>
     /// </param>
-    public static ChromeProtocol.Domains.DOM.MoveToRequest MoveTo(ChromeProtocol.Domains.DOM.NodeIdType NodeId, ChromeProtocol.Domains.DOM.NodeIdType TargetNodeId, ChromeProtocol.Domains.DOM.NodeIdType? InsertBeforeNodeId = default)
+    public static ChromeProtocol.Domains.DOM.MoveToRequest MoveTo(ChromeProtocol.Domains.DOM.NodeIdType NodeId, ChromeProtocol.Domains.DOM.NodeIdType TargetNodeId, ChromeProtocol.Domains.DOM.NodeIdType? InsertBeforeNodeId = default)    
     {
       return new ChromeProtocol.Domains.DOM.MoveToRequest(NodeId, TargetNodeId, InsertBeforeNodeId);
     }
@@ -1150,7 +1150,7 @@ namespace ChromeProtocol.Domains
     /// </summary>
     /// <param name="Query">Plain text or query selector or XPath search query.</param>
     /// <param name="IncludeUserAgentShadowDOM">True to search in user agent shadow DOM.</param>
-    public static ChromeProtocol.Domains.DOM.PerformSearchRequest PerformSearch(string Query, bool? IncludeUserAgentShadowDOM = default)
+    public static ChromeProtocol.Domains.DOM.PerformSearchRequest PerformSearch(string Query, bool? IncludeUserAgentShadowDOM = default)    
     {
       return new ChromeProtocol.Domains.DOM.PerformSearchRequest(Query, IncludeUserAgentShadowDOM);
     }
@@ -1181,7 +1181,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Requests that the node is sent to the caller given its path. // FIXME, use XPath</summary>
     /// <param name="Path">Path to node in the proprietary format.</param>
-    public static ChromeProtocol.Domains.DOM.PushNodeByPathToFrontendRequest PushNodeByPathToFrontend(string Path)
+    public static ChromeProtocol.Domains.DOM.PushNodeByPathToFrontendRequest PushNodeByPathToFrontend(string Path)    
     {
       return new ChromeProtocol.Domains.DOM.PushNodeByPathToFrontendRequest(Path);
     }
@@ -1203,7 +1203,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Requests that a batch of nodes is sent to the caller given their backend node ids.</summary>
     /// <param name="BackendNodeIds">The array of backend node ids.</param>
-    public static ChromeProtocol.Domains.DOM.PushNodesByBackendIdsToFrontendRequest PushNodesByBackendIdsToFrontend(System.Collections.Generic.IReadOnlyList<ChromeProtocol.Domains.DOM.BackendNodeIdType> BackendNodeIds)
+    public static ChromeProtocol.Domains.DOM.PushNodesByBackendIdsToFrontendRequest PushNodesByBackendIdsToFrontend(System.Collections.Generic.IReadOnlyList<ChromeProtocol.Domains.DOM.BackendNodeIdType> BackendNodeIds)    
     {
       return new ChromeProtocol.Domains.DOM.PushNodesByBackendIdsToFrontendRequest(BackendNodeIds);
     }
@@ -1229,7 +1229,7 @@ namespace ChromeProtocol.Domains
     /// <summary>Executes `querySelector` on a given node.</summary>
     /// <param name="NodeId">Id of the node to query upon.</param>
     /// <param name="Selector">Selector string.</param>
-    public static ChromeProtocol.Domains.DOM.QuerySelectorRequest QuerySelector(ChromeProtocol.Domains.DOM.NodeIdType NodeId, string Selector)
+    public static ChromeProtocol.Domains.DOM.QuerySelectorRequest QuerySelector(ChromeProtocol.Domains.DOM.NodeIdType NodeId, string Selector)    
     {
       return new ChromeProtocol.Domains.DOM.QuerySelectorRequest(NodeId, Selector);
     }
@@ -1255,7 +1255,7 @@ namespace ChromeProtocol.Domains
     /// <summary>Executes `querySelectorAll` on a given node.</summary>
     /// <param name="NodeId">Id of the node to query upon.</param>
     /// <param name="Selector">Selector string.</param>
-    public static ChromeProtocol.Domains.DOM.QuerySelectorAllRequest QuerySelectorAll(ChromeProtocol.Domains.DOM.NodeIdType NodeId, string Selector)
+    public static ChromeProtocol.Domains.DOM.QuerySelectorAllRequest QuerySelectorAll(ChromeProtocol.Domains.DOM.NodeIdType NodeId, string Selector)    
     {
       return new ChromeProtocol.Domains.DOM.QuerySelectorAllRequest(NodeId, Selector);
     }
@@ -1283,7 +1283,7 @@ namespace ChromeProtocol.Domains
     /// Top layer is rendered closest to the user within a viewport, therefore its elements always<br/>
     /// appear on top of all other content.<br/>
     /// </summary>
-    public static ChromeProtocol.Domains.DOM.GetTopLayerElementsRequest GetTopLayerElements()
+    public static ChromeProtocol.Domains.DOM.GetTopLayerElementsRequest GetTopLayerElements()    
     {
       return new ChromeProtocol.Domains.DOM.GetTopLayerElementsRequest();
     }
@@ -1304,7 +1304,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Re-does the last undone action.</summary>
-    public static ChromeProtocol.Domains.DOM.RedoRequest Redo()
+    public static ChromeProtocol.Domains.DOM.RedoRequest Redo()    
     {
       return new ChromeProtocol.Domains.DOM.RedoRequest();
     }
@@ -1319,7 +1319,7 @@ namespace ChromeProtocol.Domains
     /// <summary>Removes attribute with given name from an element with given id.</summary>
     /// <param name="NodeId">Id of the element to remove attribute from.</param>
     /// <param name="Name">Name of the attribute to remove.</param>
-    public static ChromeProtocol.Domains.DOM.RemoveAttributeRequest RemoveAttribute(ChromeProtocol.Domains.DOM.NodeIdType NodeId, string Name)
+    public static ChromeProtocol.Domains.DOM.RemoveAttributeRequest RemoveAttribute(ChromeProtocol.Domains.DOM.NodeIdType NodeId, string Name)    
     {
       return new ChromeProtocol.Domains.DOM.RemoveAttributeRequest(NodeId, Name);
     }
@@ -1340,7 +1340,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Removes node with given id.</summary>
     /// <param name="NodeId">Id of the node to remove.</param>
-    public static ChromeProtocol.Domains.DOM.RemoveNodeRequest RemoveNode(ChromeProtocol.Domains.DOM.NodeIdType NodeId)
+    public static ChromeProtocol.Domains.DOM.RemoveNodeRequest RemoveNode(ChromeProtocol.Domains.DOM.NodeIdType NodeId)    
     {
       return new ChromeProtocol.Domains.DOM.RemoveNodeRequest(NodeId);
     }
@@ -1370,7 +1370,7 @@ namespace ChromeProtocol.Domains
     /// Whether or not iframes and shadow roots should be traversed when returning the sub-tree<br/>
     /// (default is false).<br/>
     /// </param>
-    public static ChromeProtocol.Domains.DOM.RequestChildNodesRequest RequestChildNodes(ChromeProtocol.Domains.DOM.NodeIdType NodeId, int? Depth = default, bool? Pierce = default)
+    public static ChromeProtocol.Domains.DOM.RequestChildNodesRequest RequestChildNodes(ChromeProtocol.Domains.DOM.NodeIdType NodeId, int? Depth = default, bool? Pierce = default)    
     {
       return new ChromeProtocol.Domains.DOM.RequestChildNodesRequest(NodeId, Depth, Pierce);
     }
@@ -1408,7 +1408,7 @@ namespace ChromeProtocol.Domains
     /// `setChildNodes` notifications.<br/>
     /// </summary>
     /// <param name="ObjectId">JavaScript object id to convert into node.</param>
-    public static ChromeProtocol.Domains.DOM.RequestNodeRequest RequestNode(ChromeProtocol.Domains.Runtime.RemoteObjectIdType ObjectId)
+    public static ChromeProtocol.Domains.DOM.RequestNodeRequest RequestNode(ChromeProtocol.Domains.Runtime.RemoteObjectIdType ObjectId)    
     {
       return new ChromeProtocol.Domains.DOM.RequestNodeRequest(ObjectId);
     }
@@ -1437,7 +1437,7 @@ namespace ChromeProtocol.Domains
     /// <param name="BackendNodeId">Backend identifier of the node to resolve.</param>
     /// <param name="ObjectGroup">Symbolic group name that can be used to release multiple objects.</param>
     /// <param name="ExecutionContextId">Execution context in which to resolve the node.</param>
-    public static ChromeProtocol.Domains.DOM.ResolveNodeRequest ResolveNode(ChromeProtocol.Domains.DOM.NodeIdType? NodeId = default, ChromeProtocol.Domains.DOM.BackendNodeIdType? BackendNodeId = default, string? ObjectGroup = default, ChromeProtocol.Domains.Runtime.ExecutionContextIdType? ExecutionContextId = default)
+    public static ChromeProtocol.Domains.DOM.ResolveNodeRequest ResolveNode(ChromeProtocol.Domains.DOM.NodeIdType? NodeId = default, ChromeProtocol.Domains.DOM.BackendNodeIdType? BackendNodeId = default, string? ObjectGroup = default, ChromeProtocol.Domains.Runtime.ExecutionContextIdType? ExecutionContextId = default)    
     {
       return new ChromeProtocol.Domains.DOM.ResolveNodeRequest(NodeId, BackendNodeId, ObjectGroup, ExecutionContextId);
     }
@@ -1470,7 +1470,7 @@ namespace ChromeProtocol.Domains
     /// <param name="NodeId">Id of the element to set attribute for.</param>
     /// <param name="Name">Attribute name.</param>
     /// <param name="Value">Attribute value.</param>
-    public static ChromeProtocol.Domains.DOM.SetAttributeValueRequest SetAttributeValue(ChromeProtocol.Domains.DOM.NodeIdType NodeId, string Name, string Value)
+    public static ChromeProtocol.Domains.DOM.SetAttributeValueRequest SetAttributeValue(ChromeProtocol.Domains.DOM.NodeIdType NodeId, string Name, string Value)    
     {
       return new ChromeProtocol.Domains.DOM.SetAttributeValueRequest(NodeId, Name, Value);
     }
@@ -1502,7 +1502,7 @@ namespace ChromeProtocol.Domains
     /// Attribute name to replace with new attributes derived from text in case text parsed<br/>
     /// successfully.<br/>
     /// </param>
-    public static ChromeProtocol.Domains.DOM.SetAttributesAsTextRequest SetAttributesAsText(ChromeProtocol.Domains.DOM.NodeIdType NodeId, string Text, string? Name = default)
+    public static ChromeProtocol.Domains.DOM.SetAttributesAsTextRequest SetAttributesAsText(ChromeProtocol.Domains.DOM.NodeIdType NodeId, string Text, string? Name = default)    
     {
       return new ChromeProtocol.Domains.DOM.SetAttributesAsTextRequest(NodeId, Text, Name);
     }
@@ -1535,7 +1535,7 @@ namespace ChromeProtocol.Domains
     /// <param name="NodeId">Identifier of the node.</param>
     /// <param name="BackendNodeId">Identifier of the backend node.</param>
     /// <param name="ObjectId">JavaScript object id of the node wrapper.</param>
-    public static ChromeProtocol.Domains.DOM.SetFileInputFilesRequest SetFileInputFiles(System.Collections.Generic.IReadOnlyList<string> Files, ChromeProtocol.Domains.DOM.NodeIdType? NodeId = default, ChromeProtocol.Domains.DOM.BackendNodeIdType? BackendNodeId = default, ChromeProtocol.Domains.Runtime.RemoteObjectIdType? ObjectId = default)
+    public static ChromeProtocol.Domains.DOM.SetFileInputFilesRequest SetFileInputFiles(System.Collections.Generic.IReadOnlyList<string> Files, ChromeProtocol.Domains.DOM.NodeIdType? NodeId = default, ChromeProtocol.Domains.DOM.BackendNodeIdType? BackendNodeId = default, ChromeProtocol.Domains.Runtime.RemoteObjectIdType? ObjectId = default)    
     {
       return new ChromeProtocol.Domains.DOM.SetFileInputFilesRequest(Files, NodeId, BackendNodeId, ObjectId);
     }
@@ -1562,7 +1562,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Sets if stack traces should be captured for Nodes. See `Node.getNodeStackTraces`. Default is disabled.</summary>
     /// <param name="Enable">Enable or disable.</param>
-    public static ChromeProtocol.Domains.DOM.SetNodeStackTracesEnabledRequest SetNodeStackTracesEnabled(bool Enable)
+    public static ChromeProtocol.Domains.DOM.SetNodeStackTracesEnabledRequest SetNodeStackTracesEnabled(bool Enable)    
     {
       return new ChromeProtocol.Domains.DOM.SetNodeStackTracesEnabledRequest(Enable);
     }
@@ -1580,7 +1580,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Gets stack traces associated with a Node. As of now, only provides stack trace for Node creation.</summary>
     /// <param name="NodeId">Id of the node to get stack traces for.</param>
-    public static ChromeProtocol.Domains.DOM.GetNodeStackTracesRequest GetNodeStackTraces(ChromeProtocol.Domains.DOM.NodeIdType NodeId)
+    public static ChromeProtocol.Domains.DOM.GetNodeStackTracesRequest GetNodeStackTraces(ChromeProtocol.Domains.DOM.NodeIdType NodeId)    
     {
       return new ChromeProtocol.Domains.DOM.GetNodeStackTracesRequest(NodeId);
     }
@@ -1605,7 +1605,7 @@ namespace ChromeProtocol.Domains
     /// File wrapper.<br/>
     /// </summary>
     /// <param name="ObjectId">JavaScript object id of the node wrapper.</param>
-    public static ChromeProtocol.Domains.DOM.GetFileInfoRequest GetFileInfo(ChromeProtocol.Domains.Runtime.RemoteObjectIdType ObjectId)
+    public static ChromeProtocol.Domains.DOM.GetFileInfoRequest GetFileInfo(ChromeProtocol.Domains.Runtime.RemoteObjectIdType ObjectId)    
     {
       return new ChromeProtocol.Domains.DOM.GetFileInfoRequest(ObjectId);
     }
@@ -1632,7 +1632,7 @@ namespace ChromeProtocol.Domains
     /// $x functions).<br/>
     /// </summary>
     /// <param name="NodeId">DOM node id to be accessible by means of $x command line API.</param>
-    public static ChromeProtocol.Domains.DOM.SetInspectedNodeRequest SetInspectedNode(ChromeProtocol.Domains.DOM.NodeIdType NodeId)
+    public static ChromeProtocol.Domains.DOM.SetInspectedNodeRequest SetInspectedNode(ChromeProtocol.Domains.DOM.NodeIdType NodeId)    
     {
       return new ChromeProtocol.Domains.DOM.SetInspectedNodeRequest(NodeId);
     }
@@ -1654,7 +1654,7 @@ namespace ChromeProtocol.Domains
     /// <summary>Sets node name for a node with given id.</summary>
     /// <param name="NodeId">Id of the node to set name for.</param>
     /// <param name="Name">New node&#39;s name.</param>
-    public static ChromeProtocol.Domains.DOM.SetNodeNameRequest SetNodeName(ChromeProtocol.Domains.DOM.NodeIdType NodeId, string Name)
+    public static ChromeProtocol.Domains.DOM.SetNodeNameRequest SetNodeName(ChromeProtocol.Domains.DOM.NodeIdType NodeId, string Name)    
     {
       return new ChromeProtocol.Domains.DOM.SetNodeNameRequest(NodeId, Name);
     }
@@ -1680,7 +1680,7 @@ namespace ChromeProtocol.Domains
     /// <summary>Sets node value for a node with given id.</summary>
     /// <param name="NodeId">Id of the node to set value for.</param>
     /// <param name="Value">New node&#39;s value.</param>
-    public static ChromeProtocol.Domains.DOM.SetNodeValueRequest SetNodeValue(ChromeProtocol.Domains.DOM.NodeIdType NodeId, string Value)
+    public static ChromeProtocol.Domains.DOM.SetNodeValueRequest SetNodeValue(ChromeProtocol.Domains.DOM.NodeIdType NodeId, string Value)    
     {
       return new ChromeProtocol.Domains.DOM.SetNodeValueRequest(NodeId, Value);
     }
@@ -1702,7 +1702,7 @@ namespace ChromeProtocol.Domains
     /// <summary>Sets node HTML markup, returns new node id.</summary>
     /// <param name="NodeId">Id of the node to set markup for.</param>
     /// <param name="OuterHTML">Outer HTML markup to set.</param>
-    public static ChromeProtocol.Domains.DOM.SetOuterHTMLRequest SetOuterHTML(ChromeProtocol.Domains.DOM.NodeIdType NodeId, string OuterHTML)
+    public static ChromeProtocol.Domains.DOM.SetOuterHTMLRequest SetOuterHTML(ChromeProtocol.Domains.DOM.NodeIdType NodeId, string OuterHTML)    
     {
       return new ChromeProtocol.Domains.DOM.SetOuterHTMLRequest(NodeId, OuterHTML);
     }
@@ -1722,7 +1722,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Undoes the last performed action.</summary>
-    public static ChromeProtocol.Domains.DOM.UndoRequest Undo()
+    public static ChromeProtocol.Domains.DOM.UndoRequest Undo()    
     {
       return new ChromeProtocol.Domains.DOM.UndoRequest();
     }
@@ -1735,7 +1735,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Returns iframe node that owns iframe with the given domain.</summary>
-    public static ChromeProtocol.Domains.DOM.GetFrameOwnerRequest GetFrameOwner(ChromeProtocol.Domains.Page.FrameIdType FrameId)
+    public static ChromeProtocol.Domains.DOM.GetFrameOwnerRequest GetFrameOwner(ChromeProtocol.Domains.Page.FrameIdType FrameId)    
     {
       return new ChromeProtocol.Domains.DOM.GetFrameOwnerRequest(FrameId);
     }
@@ -1763,7 +1763,7 @@ namespace ChromeProtocol.Domains
     /// provided, the style container is returned, which is the direct parent or the<br/>
     /// closest element with a matching container-name.<br/>
     /// </summary>
-    public static ChromeProtocol.Domains.DOM.GetContainerForNodeRequest GetContainerForNode(ChromeProtocol.Domains.DOM.NodeIdType NodeId, string? ContainerName = default, ChromeProtocol.Domains.DOM.PhysicalAxesType? PhysicalAxes = default, ChromeProtocol.Domains.DOM.LogicalAxesType? LogicalAxes = default)
+    public static ChromeProtocol.Domains.DOM.GetContainerForNodeRequest GetContainerForNode(ChromeProtocol.Domains.DOM.NodeIdType NodeId, string? ContainerName = default, ChromeProtocol.Domains.DOM.PhysicalAxesType? PhysicalAxes = default, ChromeProtocol.Domains.DOM.LogicalAxesType? LogicalAxes = default)    
     {
       return new ChromeProtocol.Domains.DOM.GetContainerForNodeRequest(NodeId, ContainerName, PhysicalAxes, LogicalAxes);
     }
@@ -1798,7 +1798,7 @@ namespace ChromeProtocol.Domains
     /// container queries against this container.<br/>
     /// </summary>
     /// <param name="NodeId">Id of the container node to find querying descendants from.</param>
-    public static ChromeProtocol.Domains.DOM.GetQueryingDescendantsForContainerRequest GetQueryingDescendantsForContainer(ChromeProtocol.Domains.DOM.NodeIdType NodeId)
+    public static ChromeProtocol.Domains.DOM.GetQueryingDescendantsForContainerRequest GetQueryingDescendantsForContainer(ChromeProtocol.Domains.DOM.NodeIdType NodeId)    
     {
       return new ChromeProtocol.Domains.DOM.GetQueryingDescendantsForContainerRequest(NodeId);
     }

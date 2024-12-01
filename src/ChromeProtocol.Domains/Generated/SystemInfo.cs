@@ -87,14 +87,14 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>YUV subsampling type of the pixels of a given image.</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record SubsamplingFormatType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
     /// <summary>Image format of a given image.</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record ImageTypeType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -164,7 +164,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Returns information about the system.</summary>
-    public static ChromeProtocol.Domains.SystemInfo.GetInfoRequest GetInfo()
+    public static ChromeProtocol.Domains.SystemInfo.GetInfoRequest GetInfo()    
     {
       return new ChromeProtocol.Domains.SystemInfo.GetInfoRequest();
     }
@@ -199,7 +199,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Returns information about the feature state.</summary>
-    public static ChromeProtocol.Domains.SystemInfo.GetFeatureStateRequest GetFeatureState(string FeatureState)
+    public static ChromeProtocol.Domains.SystemInfo.GetFeatureStateRequest GetFeatureState(string FeatureState)    
     {
       return new ChromeProtocol.Domains.SystemInfo.GetFeatureStateRequest(FeatureState);
     }
@@ -218,7 +218,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Returns information about all running processes.</summary>
-    public static ChromeProtocol.Domains.SystemInfo.GetProcessInfoRequest GetProcessInfo()
+    public static ChromeProtocol.Domains.SystemInfo.GetProcessInfoRequest GetProcessInfo()    
     {
       return new ChromeProtocol.Domains.SystemInfo.GetProcessInfoRequest();
     }

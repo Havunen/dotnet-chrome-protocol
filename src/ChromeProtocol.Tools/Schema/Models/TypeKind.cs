@@ -8,5 +8,6 @@ public enum TypeKind
   Integer,
   Number,
   Object,
-  String
+  String,
+  Binary
 }

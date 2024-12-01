@@ -35,19 +35,19 @@ namespace ChromeProtocol.Domains
     ) : ChromeProtocol.Core.IType
     {
     }
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record CookieExclusionReasonType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record CookieWarningReasonType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record CookieOperationType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -88,13 +88,13 @@ namespace ChromeProtocol.Domains
     ) : ChromeProtocol.Core.IType
     {
     }
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record MixedContentResolutionStatusType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record MixedContentResourceTypeType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -134,7 +134,7 @@ namespace ChromeProtocol.Domains
     /// Enum indicating the reason a response has been blocked. These reasons are<br/>
     /// refinements of the net error BLOCKED_BY_RESPONSE.<br/>
     /// </summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record BlockedByResponseReasonType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -157,13 +157,13 @@ namespace ChromeProtocol.Domains
     ) : ChromeProtocol.Core.IType
     {
     }
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record HeavyAdResolutionStatusType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
     {
     }
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record HeavyAdReasonType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -182,7 +182,7 @@ namespace ChromeProtocol.Domains
     ) : ChromeProtocol.Core.IType
     {
     }
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record ContentSecurityPolicyViolationTypeType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -220,7 +220,7 @@ namespace ChromeProtocol.Domains
     ) : ChromeProtocol.Core.IType
     {
     }
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record SharedArrayBufferIssueTypeType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -280,7 +280,7 @@ namespace ChromeProtocol.Domains
     ) : ChromeProtocol.Core.IType
     {
     }
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record AttributionReportingIssueTypeType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -333,7 +333,7 @@ namespace ChromeProtocol.Domains
     ) : ChromeProtocol.Core.IType
     {
     }
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record GenericIssueErrorTypeType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -396,7 +396,7 @@ namespace ChromeProtocol.Domains
     ) : ChromeProtocol.Core.IType
     {
     }
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record ClientHintIssueReasonType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -414,7 +414,7 @@ namespace ChromeProtocol.Domains
     /// third_party/blink/public/mojom/devtools/inspector_issue.mojom to include<br/>
     /// all cases except for success.<br/>
     /// </summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record FederatedAuthRequestIssueReasonType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -431,7 +431,7 @@ namespace ChromeProtocol.Domains
     /// Should be updated alongside FederatedAuthUserInfoRequestResult in<br/>
     /// third_party/blink/public/mojom/devtools/inspector_issue.mojom.<br/>
     /// </summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record FederatedAuthUserInfoRequestIssueReasonType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -461,7 +461,7 @@ namespace ChromeProtocol.Domains
     ) : ChromeProtocol.Core.IType
     {
     }
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record StyleSheetLoadingIssueReasonType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -481,7 +481,7 @@ namespace ChromeProtocol.Domains
     ) : ChromeProtocol.Core.IType
     {
     }
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record PropertyRuleIssueReasonType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -509,7 +509,7 @@ namespace ChromeProtocol.Domains
     /// optional fields in InspectorIssueDetails to convey more specific<br/>
     /// information about the kind of issue.<br/>
     /// </summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record InspectorIssueCodeType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -569,7 +569,7 @@ namespace ChromeProtocol.Domains
     /// A unique id for a DevTools inspector issue. Allows other entities (e.g.<br/>
     /// exceptions, CDP message, console messages, etc.) to reference an issue.<br/>
     /// </summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record IssueIdType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -605,7 +605,7 @@ namespace ChromeProtocol.Domains
     /// <param name="Encoding">The encoding to use.</param>
     /// <param name="Quality">The quality of the encoding (0-1). (defaults to 1)</param>
     /// <param name="SizeOnly">Whether to only return the size information (defaults to false).</param>
-    public static ChromeProtocol.Domains.Audits.GetEncodedResponseRequest GetEncodedResponse(ChromeProtocol.Domains.Network.RequestIdType RequestId, string Encoding, double? Quality = default, bool? SizeOnly = default)
+    public static ChromeProtocol.Domains.Audits.GetEncodedResponseRequest GetEncodedResponse(ChromeProtocol.Domains.Network.RequestIdType RequestId, string Encoding, double? Quality = default, bool? SizeOnly = default)    
     {
       return new ChromeProtocol.Domains.Audits.GetEncodedResponseRequest(RequestId, Encoding, Quality, SizeOnly);
     }
@@ -644,7 +644,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Disables issues domain, prevents further issues from being reported to the client.</summary>
-    public static ChromeProtocol.Domains.Audits.DisableRequest Disable()
+    public static ChromeProtocol.Domains.Audits.DisableRequest Disable()    
     {
       return new ChromeProtocol.Domains.Audits.DisableRequest();
     }
@@ -660,7 +660,7 @@ namespace ChromeProtocol.Domains
     /// Enables issues domain, sends the issues collected so far to the client by means of the<br/>
     /// `issueAdded` event.<br/>
     /// </summary>
-    public static ChromeProtocol.Domains.Audits.EnableRequest Enable()
+    public static ChromeProtocol.Domains.Audits.EnableRequest Enable()    
     {
       return new ChromeProtocol.Domains.Audits.EnableRequest();
     }
@@ -680,7 +680,7 @@ namespace ChromeProtocol.Domains
     /// using Audits.issueAdded event.<br/>
     /// </summary>
     /// <param name="ReportAAA">Whether to report WCAG AAA level issues. Default is false.</param>
-    public static ChromeProtocol.Domains.Audits.CheckContrastRequest CheckContrast(bool? ReportAAA = default)
+    public static ChromeProtocol.Domains.Audits.CheckContrastRequest CheckContrast(bool? ReportAAA = default)    
     {
       return new ChromeProtocol.Domains.Audits.CheckContrastRequest(ReportAAA);
     }
@@ -703,7 +703,7 @@ namespace ChromeProtocol.Domains
     /// Runs the form issues check for the target page. Found issues are reported<br/>
     /// using Audits.issueAdded event.<br/>
     /// </summary>
-    public static ChromeProtocol.Domains.Audits.CheckFormsIssuesRequest CheckFormsIssues()
+    public static ChromeProtocol.Domains.Audits.CheckFormsIssuesRequest CheckFormsIssues()    
     {
       return new ChromeProtocol.Domains.Audits.CheckFormsIssuesRequest();
     }

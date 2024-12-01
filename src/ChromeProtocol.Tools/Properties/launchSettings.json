@@ -3,7 +3,7 @@
   "profiles": {
     "Generate ChromeProtocol.Domains": {
       "commandName": "Project",
-      "commandLineArgs": "generate js_protocol.json browser_protocol.json mono_protocol.json --namespace ChromeProtocol.Domains --output ../../../../ChromeProtocol.Domains/Generated"
+      "commandLineArgs": "generate /home/sampo/chromium/src/third_party/devtools-frontend/src/node_modules/devtools-protocol/json/js_protocol.json /home/sampo/chromium/src/out/MTLabeler/gen/chrome/browser/devtools/protocol.json --namespace AE.CDP --output /home/sampo/git/AutoExplore/AutoExplore/AE.CDP/Gen"
     }
   }
 }

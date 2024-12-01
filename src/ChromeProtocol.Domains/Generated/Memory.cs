@@ -6,7 +6,7 @@ namespace ChromeProtocol.Domains
   public static partial class Memory
   {
     /// <summary>Memory pressure level.</summary>
-    [System.Text.Json.Serialization.JsonConverter(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
+    [System.Text.Json.Serialization.JsonConverterAttribute(typeof(ChromeProtocol.Core.PrimitiveTypeConverter))]
     public record PressureLevelType(
       string Value
     ) : ChromeProtocol.Core.PrimitiveType<string>(Value)
@@ -55,7 +55,7 @@ namespace ChromeProtocol.Domains
     ) : ChromeProtocol.Core.IType
     {
     }
-    public static ChromeProtocol.Domains.Memory.GetDOMCountersRequest GetDOMCounters()
+    public static ChromeProtocol.Domains.Memory.GetDOMCountersRequest GetDOMCounters()    
     {
       return new ChromeProtocol.Domains.Memory.GetDOMCountersRequest();
     }
@@ -73,7 +73,7 @@ namespace ChromeProtocol.Domains
     ) : ChromeProtocol.Core.IType
     {
     }
-    public static ChromeProtocol.Domains.Memory.PrepareForLeakDetectionRequest PrepareForLeakDetection()
+    public static ChromeProtocol.Domains.Memory.PrepareForLeakDetectionRequest PrepareForLeakDetection()    
     {
       return new ChromeProtocol.Domains.Memory.PrepareForLeakDetectionRequest();
     }
@@ -85,7 +85,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Simulate OomIntervention by purging V8 memory.</summary>
-    public static ChromeProtocol.Domains.Memory.ForciblyPurgeJavaScriptMemoryRequest ForciblyPurgeJavaScriptMemory()
+    public static ChromeProtocol.Domains.Memory.ForciblyPurgeJavaScriptMemoryRequest ForciblyPurgeJavaScriptMemory()    
     {
       return new ChromeProtocol.Domains.Memory.ForciblyPurgeJavaScriptMemoryRequest();
     }
@@ -99,7 +99,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Enable/disable suppressing memory pressure notifications in all processes.</summary>
     /// <param name="Suppressed">If true, memory pressure notifications will be suppressed.</param>
-    public static ChromeProtocol.Domains.Memory.SetPressureNotificationsSuppressedRequest SetPressureNotificationsSuppressed(bool Suppressed)
+    public static ChromeProtocol.Domains.Memory.SetPressureNotificationsSuppressedRequest SetPressureNotificationsSuppressed(bool Suppressed)    
     {
       return new ChromeProtocol.Domains.Memory.SetPressureNotificationsSuppressedRequest(Suppressed);
     }
@@ -117,7 +117,7 @@ namespace ChromeProtocol.Domains
     }
     /// <summary>Simulate a memory pressure notification in all processes.</summary>
     /// <param name="Level">Memory pressure level of the notification.</param>
-    public static ChromeProtocol.Domains.Memory.SimulatePressureNotificationRequest SimulatePressureNotification(ChromeProtocol.Domains.Memory.PressureLevelType Level)
+    public static ChromeProtocol.Domains.Memory.SimulatePressureNotificationRequest SimulatePressureNotification(ChromeProtocol.Domains.Memory.PressureLevelType Level)    
     {
       return new ChromeProtocol.Domains.Memory.SimulatePressureNotificationRequest(Level);
     }
@@ -136,7 +136,7 @@ namespace ChromeProtocol.Domains
     /// <summary>Start collecting native memory profile.</summary>
     /// <param name="SamplingInterval">Average number of bytes between samples.</param>
     /// <param name="SuppressRandomness">Do not randomize intervals between samples.</param>
-    public static ChromeProtocol.Domains.Memory.StartSamplingRequest StartSampling(int? SamplingInterval = default, bool? SuppressRandomness = default)
+    public static ChromeProtocol.Domains.Memory.StartSamplingRequest StartSampling(int? SamplingInterval = default, bool? SuppressRandomness = default)    
     {
       return new ChromeProtocol.Domains.Memory.StartSamplingRequest(SamplingInterval, SuppressRandomness);
     }
@@ -156,7 +156,7 @@ namespace ChromeProtocol.Domains
     {
     }
     /// <summary>Stop collecting native memory profile.</summary>
-    public static ChromeProtocol.Domains.Memory.StopSamplingRequest StopSampling()
+    public static ChromeProtocol.Domains.Memory.StopSamplingRequest StopSampling()    
     {
       return new ChromeProtocol.Domains.Memory.StopSamplingRequest();
     }
@@ -172,7 +172,7 @@ namespace ChromeProtocol.Domains
     /// Retrieve native memory allocations profile<br/>
     /// collected since renderer process startup.<br/>
     /// </summary>
-    public static ChromeProtocol.Domains.Memory.GetAllTimeSamplingProfileRequest GetAllTimeSamplingProfile()
+    public static ChromeProtocol.Domains.Memory.GetAllTimeSamplingProfileRequest GetAllTimeSamplingProfile()    
     {
       return new ChromeProtocol.Domains.Memory.GetAllTimeSamplingProfileRequest();
     }
@@ -194,7 +194,7 @@ namespace ChromeProtocol.Domains
     /// Retrieve native memory allocations profile<br/>
     /// collected since browser process startup.<br/>
     /// </summary>
-    public static ChromeProtocol.Domains.Memory.GetBrowserSamplingProfileRequest GetBrowserSamplingProfile()
+    public static ChromeProtocol.Domains.Memory.GetBrowserSamplingProfileRequest GetBrowserSamplingProfile()    
     {
       return new ChromeProtocol.Domains.Memory.GetBrowserSamplingProfileRequest();
     }
@@ -216,7 +216,7 @@ namespace ChromeProtocol.Domains
     /// Retrieve native memory allocations profile collected since last<br/>
     /// `startSampling` call.<br/>
     /// </summary>
-    public static ChromeProtocol.Domains.Memory.GetSamplingProfileRequest GetSamplingProfile()
+    public static ChromeProtocol.Domains.Memory.GetSamplingProfileRequest GetSamplingProfile()    
     {
       return new ChromeProtocol.Domains.Memory.GetSamplingProfileRequest();
     }
